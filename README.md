@@ -4,7 +4,7 @@ ChecksumJack
 
 ChecksumJack is a software to calculate a files hash digest. It runs on multiple platform and is distributed under the GPL. You are welcome to download it for free.
 
-http://www.ChecksumJack.org
+www.ChecksumJack.org
 
 Supported hash: 
 
@@ -38,5 +38,5 @@ make install
 
 ## WINDOWS
 
-Get installer from http://www.ChecksumJack.org
+Get installer from www.ChecksumJack.org
 
