@@ -3,13 +3,13 @@ checksumJack
 
 MD5, SHA-1, Ripemd, SHA-2 (SHA254, SHA256, SHA384, SHA512) and Whirlpool.
 
-## INSTALL
+# INSTALL
 
 libraries needed:
 QT5
 openSSL -> libSSL-dev
 
-# LINUX 
+## LINUX 
 
 buildtools needed:
 make
@@ -22,7 +22,7 @@ make
 make install
 ```
 
-# WINDOWS
+## WINDOWS
 
 Get installer from http://www.checksumjack.org
 
