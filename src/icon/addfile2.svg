@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="500"
+   height="500"
+   id="svg4590"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="addfile2.svg"
+   inkscape:export-filename="C:\Users\daniel\Documents\checksumjack\icon\addfile2.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4592" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="143.3156"
+     inkscape:cy="395.6632"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4595">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-552.36218)">
+    <path
+       sodipodi:type="arc"
+       style="fill:#83db59;fill-opacity:0.8;stroke:#000000;stroke-width:25;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="path4400"
+       sodipodi:cx="-442.14285"
+       sodipodi:cy="256.42856"
+       sodipodi:rx="167.85715"
+       sodipodi:ry="173.57143"
+       d="m -442.11018,82.857135 a 167.85715,173.57143 0 1 1 -0.0347,-3e-6"
+       transform="matrix(1.3825638,0,0,1.3490413,862.03262,457.80937)"
+       sodipodi:start="4.7125836"
+       sodipodi:end="10.995562"
+       sodipodi:open="true" />
+    <g
+       id="g4404"
+       style="fill:#ffffff"
+       transform="matrix(1.3825638,0,0,1.3490413,900.10676,-320.33251)">
+      <rect
+         inkscape:export-ydpi="68.231224"
+         inkscape:export-xdpi="68.231224"
+         inkscape:export-filename="C:\Users\daniel\Documents\checksumjack\icon\addfile2.png"
+         ry="11.01892"
+         y="799.68195"
+         x="-573.52295"
+         height="67.115242"
+         width="207.6826"
+         id="rect2985-1-7"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+      <rect
+         inkscape:export-ydpi="68.231224"
+         inkscape:export-xdpi="68.231224"
+         inkscape:export-filename="C:\Users\daniel\Documents\checksumjack\icon\addfile2.png"
+         transform="matrix(0,-1,1,0,0,0)"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none"
+         id="rect2987-5"
+         width="207.6826"
+         height="67.115242"
+         x="-937.08087"
+         y="-503.23923"
+         ry="11.01892" />
+    </g>
+  </g>
+</svg>

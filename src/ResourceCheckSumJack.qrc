@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>icon/checksumjack.png</file>
+        <file>icon/filter.png</file>
+        <file>icon/minus.png</file>
+        <file>icon/plus.png</file>
+        <file>icon/remove.png</file>
+        <file>icon/clearall.png</file>
+        <file>icon/compare.png</file>
+        <file>icon/disc.png</file>
+        <file>icon/refresh.png</file>
+        <file>icon/save.png</file>
+        <file>icon/stop.png</file>
+        <file>icon/validate.png</file>
+        <file>icon/loader2.gif</file>
+        <file>icon/addfile2.png</file>
+        <file>icon/addfolder.png</file>
+        <file>icon/openhashfile.png</file>
+    </qresource>
+</RCC>

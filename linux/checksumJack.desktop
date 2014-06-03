@@ -1,0 +1,10 @@
+[Desktop Entry] 
+Version=1.0 
+Name=checksumJack
+Exec=/usr/bin/checksumJack %F
+TryExec=/usr/bin/checksumJack
+Icon=checksumJack
+Terminal=false
+Type=Application
+Categories=
+MimeType=application/sha256;

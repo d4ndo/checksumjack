@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="500"
+   height="500"
+   id="svg4028"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="openhashfile.svg"
+   inkscape:export-filename="C:\Users\daniel\Documents\checksumjack\icon\openhashfile.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4030">
+    <filter
+       inkscape:collect="always"
+       id="filter3796"
+       color-interpolation-filters="sRGB">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="11.632653"
+         id="feGaussianBlur3798" />
+    </filter>
+    <filter
+       color-interpolation-filters="sRGB"
+       inkscape:collect="always"
+       id="filter3837">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="16.435599"
+         id="feGaussianBlur3839" />
+    </filter>
+    <linearGradient
+       y2="1186.1514"
+       x2="-1261.613"
+       y1="-112.65371"
+       x1="-284.90652"
+       gradientTransform="matrix(0.69036673,0,0,0.60055196,1045.2614,300.01662)"
+       gradientUnits="userSpaceOnUse"
+       id="linearGradient3015"
+       xlink:href="#linearGradient3827"
+       inkscape:collect="always" />
+    <linearGradient
+       id="linearGradient3827">
+      <stop
+         style="stop-color:#00ff00;stop-opacity:1;"
+         offset="0"
+         id="stop3829" />
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="1"
+         id="stop3831" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3827"
+       id="linearGradient5208"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.69036673,0,0,0.60055196,1045.2614,300.01662)"
+       x1="-284.90652"
+       y1="-112.65371"
+       x2="-1261.613"
+       y2="1186.1514" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="-187.1981"
+     inkscape:cy="144.38513"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4033">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-552.36218)">
+    <g
+       id="g5201"
+       transform="matrix(0.968506,0,0,0.968506,10.851392,22.587028)">
+      <rect
+         transform="matrix(1.1182433,0,0,1.1182433,-1360.4555,725.61291)"
+         rx="38.57143"
+         ry="37.142857"
+         y="-130.69498"
+         x="1239.3085"
+         height="408.57144"
+         width="328.57144"
+         id="rect3889"
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:22.3564949;stroke-miterlimit:4;stroke-opacity:0.8;stroke-dasharray:none;filter:url(#filter3796)"
+         inkscape:export-filename="C:\Users\Daniel\Documents\checksumjack\icon\openhashfile.png"
+         inkscape:export-xdpi="87.291107"
+         inkscape:export-ydpi="87.291107" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:25;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+         id="rect3891"
+         width="367.42282"
+         height="456.88226"
+         x="33.38031"
+         y="573.46173"
+         ry="41.534752"
+         rx="43.132244"
+         inkscape:export-filename="C:\Users\Daniel\Documents\checksumjack\icon\openhashfile.png"
+         inkscape:export-xdpi="87.291107"
+         inkscape:export-ydpi="87.291107" />
+      <g
+         inkscape:export-ydpi="87.291107"
+         inkscape:export-xdpi="87.291107"
+         inkscape:export-filename="C:\Users\Daniel\Documents\checksumjack\icon\openhashfile.png"
+         transform="matrix(0.6632212,0,0,0.72500925,25.236373,232.12645)"
+         id="g3065">
+        <path
+           inkscape:connector-curvature="0"
+           d="m -1477.2393,928.62253 c 23.3084,21.42809 46.0566,43.22813 67.4632,65.85744 27.3569,29.44863 54.3746,59.05963 83.4189,87.51673 3.3043,2.9706 6.4734,6.0407 9.9131,8.9118 3.8576,3.2202 9.8487,8.2539 12.1452,6.8028 1.1915,-0.753 -0.1348,-2.581 0.082,-3.8304 0.6895,-3.9743 4.8553,-17.3041 5.4612,-19.3317 4.4866,-12.0712 6.9287,-24.7078 11.0246,-36.8839 5.7796,-17.1818 15.506,-40.69208 22.9766,-56.81184 5.3684,-11.58385 10.7388,-23.18253 16.9782,-34.42149 7.4701,-13.45604 16.0824,-26.41065 24.1237,-39.61601 21.2139,-30.69163 40.2922,-59.77975 64.6997,-88.85919 13.0203,-15.51244 27.0803,-30.41015 41.324,-45.16324 28.5066,-29.52575 54.9933,-54.30561 87.3901,-80.88781 13.4656,-11.0488 27.8017,-21.38917 41.7025,-32.08375 29.68303,-21.12818 59.70653,-42.16635 92.41784,-60.39288 9.91226,-5.52312 20.55588,-11.34221 32.56389,-14.1633 3.2231,-0.75717 6.76863,-0.64881 10.15299,-0.97324 0,0 -20.82659,91.55429 -20.82659,91.55429 l 0,0 c -2.17229,-0.15976 -4.39749,-0.68579 -6.51673,-0.47925 -10.35224,1.0088 -20.10349,4.84304 -28.86933,8.53716 -32.22044,13.5784 -61.18064,31.20257 -89.23341,49.37043 -37.49936,27.03105 -49.16876,33.96991 -83.60776,65.26075 -59.8605,54.38847 -108.7092,116.06365 -148.2065,182.13928 -7.9616,14.60043 -16.4117,29.00269 -23.8849,43.80129 -10.6605,21.1097 -21.8148,47.9046 -29.7597,70.1563 -8.8852,24.8858 -8.8838,28.4665 -15.6933,51.69 -1.8205,6.2085 -3.8184,12.3691 -5.7278,18.5537 -2.8384,6.8031 -5.1893,18.0716 -14.1147,22.3317 -16.0039,7.639 -29.4888,-12.1763 -37.6672,-20.3011 -27.5487,-29.7621 -54.785,-59.7028 -82.795,-89.2018 -20.9576,-20.9621 -42.5495,-41.9344 -68.5247,-59.0913 0,0 31.5901,-89.99147 31.5901,-89.99147 z"
+           id="path3835-1"
+           style="opacity:0.53872052;fill:#000000;fill-opacity:0.51322752;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;filter:url(#filter3837)"
+           transform="matrix(0.82880144,0,0,0.79920137,1397.7947,29.512727)"
+           inkscape:export-filename="C:\Users\Daniel\Documents\checksumjack\icon\checksumjackicon.png"
+           inkscape:export-xdpi="16.58493"
+           inkscape:export-ydpi="16.58493" />
+        <path
+           style="fill:url(#linearGradient5208);fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+           id="path3825"
+           d="m 179.70552,733.92704 c 19.31812,17.12543 38.1719,34.54789 55.91362,52.63336 22.67361,23.53529 45.06587,47.20051 69.13775,69.9435 2.73859,2.37412 5.36532,4.82773 8.21606,7.12226 3.19728,2.5737 8.16266,6.59649 10.06599,5.43689 0.98753,-0.60199 -0.11185,-2.06283 0.0674,-3.06137 0.57143,-3.17627 4.02401,-13.82928 4.5263,-15.4499 3.71848,-9.64731 5.74258,-19.74649 9.13721,-29.47766 4.79012,-13.73179 12.85138,-32.52112 19.04302,-45.404 4.44933,-9.25783 8.90037,-18.5275 14.0715,-27.50978 6.19121,-10.75406 13.32914,-21.10739 19.99377,-31.66117 17.58206,-24.52877 33.39421,-47.77603 53.62325,-71.0164 10.79125,-12.39753 22.44411,-24.30379 34.24929,-36.09449 23.62633,-23.59707 45.57863,-43.4011 72.42906,-64.64566 11.16029,-8.83022 23.04211,-17.09427 34.56312,-25.64139 24.60129,-16.88567 49.48486,-33.69941 76.596,-48.26607 8.21536,-4.41409 17.03673,-9.06471 26.98903,-11.31933 2.67131,-0.60513 5.60986,-0.51853 8.4148,-0.77781 0,0 -17.26111,73.17031 -17.26111,73.17031 l 0,0 c -1.80043,-0.12768 -3.64463,-0.54809 -5.40108,-0.38301 -8.5799,0.80621 -16.66179,3.87056 -23.92688,6.8229 -26.70442,10.85188 -50.70664,24.93717 -73.95684,39.45689 -31.07948,21.60329 -40.75114,27.14881 -69.29421,52.15652 -49.61244,43.46731 -90.09834,92.7582 -122.83374,145.56603 -6.59859,11.66865 -13.60209,23.17883 -19.79583,35.00597 -8.8354,16.87085 -18.08013,38.28541 -24.6649,56.06894 -7.36406,19.88875 -7.36287,22.75055 -13.00658,41.31077 -1.50874,4.96184 -3.16469,9.88538 -4.74723,14.82822 -2.35241,5.43697 -4.30092,14.4428 -11.69826,17.84749 -13.26416,6.10513 -24.44043,-9.73127 -31.21859,-16.22469 -22.83252,-23.78599 -45.40587,-47.71455 -68.6207,-71.29033 -17.36972,-16.75286 -35.265,-33.51388 -56.79336,-47.22577 0,0 26.18197,-71.92122 26.18197,-71.92122 z"
+           inkscape:connector-curvature="0"
+           inkscape:export-filename="C:\Users\Daniel\Documents\checksumjack\icon\checksumjackicon.png"
+           inkscape:export-xdpi="16.58493"
+           inkscape:export-ydpi="16.58493" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,25 @@
+checksumJack depends on 
+
+Qt > 5.x 
+openSSL
+
+How to compile :
+
+clone the reopsitory from github.
+git clone 
+
+cd checksumjacl/src/
+qmake -o Makefile checksumJack.pro
+make
+make install
+
+
+Prepare for desktop (gnome nautilus):
+
+sudo cp /linux/checksumjack.xml /usr/share/mime/package/
+sudo update-mime-database /usr/share/mime
+sudo cp /src/icon/48.png .local/share/icons/
+
+IMPORTANT
+mkdir ~/.checksumJack
+cp /linux/filter.xml ~/.checksumJack/
