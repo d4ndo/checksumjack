@@ -1,4 +1,4 @@
-checksumJack depends on 
+ChecksumJack depends on 
 
 Qt > 5.x 
 openSSL
