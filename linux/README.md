@@ -21,7 +21,8 @@ make install
 Prepare for desktop (gnome nautilus):
 
 ```bash
-sudo cp /linux/checksumjack.xml /usr/share/mime/package/
+sudo cp /linux/checksumjack.xml /usr/share/mime/packages/
+sudo cp /linux/checksumjack.desktop /usr/share/applications/
 sudo update-mime-database /usr/share/mime
 sudo cp /src/icon/48.png .local/share/icons/
 ```
