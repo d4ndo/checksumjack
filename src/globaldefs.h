@@ -22,7 +22,7 @@
 #ifdef Q_OS_WIN
 #define FILTER "/checksumJack/filter.xml"
 #else
-//#define FILTER "/.checksumJack/filter.xml"
+#define FILTER "/.checksumJack/filter.xml"
 #endif
 
 #define BLOCKSIZE   (65536)
