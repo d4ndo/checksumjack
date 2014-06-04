@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
+	<mime-type type="application/md5">
+		<comment>MD5 digest</comment>
+		<glob pattern="*.md5"/>
+	</mime-type>
+	<mime-type type="application/sha1">
+		<comment>sha1 digest</comment>
+		<glob pattern="*.sha1"/>
+	</mime-type>
+	<mime-type type="application/sha224">
+		<comment>sha224 digest</comment>
+		<glob pattern="*.sha224"/>
+	</mime-type>
 	<mime-type type="application/sha256">
-		<comment>sha2 digest 256</comment>
+		<comment>sha256 digest</comment>
 		<glob pattern="*.sha256"/>
 	</mime-type>
+	<mime-type type="application/sha384">
+		<comment>sha384 digest</comment>
+		<glob pattern="*.sha384"/>
+	</mime-type>
+	<mime-type type="application/sha512">
+		<comment>sha512 digest</comment>
+		<glob pattern="*.sha512"/>
+	</mime-type>
+	<mime-type type="application/ripemd160">
+		<comment>ripemd160 digest</comment>
+		<glob pattern="*.ripemd160"/>
+	</mime-type>
+	<mime-type type="application/whirlpool">
+		<comment>whirlpool digest</comment>
+		<glob pattern="*.whirlpool"/>
+	</mime-type>	
 </mime-info>
