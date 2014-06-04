@@ -20,7 +20,6 @@
 
 #include "fileio.h"
 #include "globaldefs.h"
-#include <QDebug>
 
 using namespace std;
 
@@ -55,7 +54,6 @@ bool FileIO::openFileRead(void)
         if (stat64(mfilename.toStdString().c_str(), &st) == 0)
         mSize = st.st_size;
       #endif
-      //qDebug() << mSize;
     return true;
 }
 

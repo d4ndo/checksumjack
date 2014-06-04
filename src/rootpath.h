@@ -23,7 +23,6 @@
 #include <QtGui>
 #include <QtCore>
 #include <QStandardPaths>
-#include <QDebug>
 #include "globaldefs.h"
 
 QString encodeDynamicPath(QString rootpath);
