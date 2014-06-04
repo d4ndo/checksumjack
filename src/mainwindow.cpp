@@ -109,8 +109,6 @@ void MainWindow::init()
     mchecksumfiles.clear();
     report.clear();
     root.clear();
-
-//    printReport();
 }
 
 void MainWindow::initInclude()
@@ -849,7 +847,6 @@ void MainWindow::calculateValid()
             if (patternBSDStyle.indexIn(line) == 0)
             {
                 /* BSD Style detected */
-                // QRegExp patternBSDStyle("^([^\\s]*)(\\s*\\()([^\\)]*)(\\)\\s*)(=\\s*)(.{32,128})$");
                 ReportItem r;
 
                 if (patternBSDStyle.cap(1) == "MD5")  r.sizeItem()->setText("MD5");
@@ -867,10 +864,7 @@ void MainWindow::calculateValid()
                 report2.append(r);
 
             } else if (patternMD5Style.indexIn(line) == 0){
-
                 /* MD5 style detected */
-                // QRegExp patternMD5Style("^([^\\s]{32,128})(\\s+)(\\*{0,1})(.*)$");
-
                 mhashes.append(patternMD5Style.cap(1));
                 ReportItem r;
                 r.fileItem()->setText(QDir::fromNativeSeparators(patternMD5Style.cap(4).trimmed()));
@@ -1150,9 +1144,7 @@ void MainWindow::pre()
 {
     mprogress = true;
     ui->menuBar->setDisabled(true);
-    //ui->toolBar_2->setDisabled(true);
     ui->groupBox_3->setDisabled(true);
-    //ui->commandLinkButtonSelectFiles->setDisabled(true);
     ui->commandLinkButtonRefresh->setDisabled(true);
     ui->commandLinkButtonClearAll->setDisabled(true);
     ui->commandLinkButtonRefresh_2->setDisabled(true);
@@ -1167,13 +1159,11 @@ void MainWindow::post()
 {
      mprogress = false;
      ui->menuBar->setDisabled(false);
-//   ui->toolBar_2->setDisabled(false);
      ui->groupBox_3->setDisabled(false);
      ui->commandLinkButtonRefresh->setDisabled(false);
      ui->commandLinkButtonClearAll->setDisabled(false);
      ui->commandLinkButtonRefresh_2->setDisabled(false);
      ui->commandLinkButtonClearAll_2->setDisabled(false);
-     //ui->commandLinkButtonSelectFiles->setDisabled(false);
      ui->commandLinkButtonSaveChecksum->setDisabled(false);
      ui->commandLinkButtonOpenCheckSumFile->setDisabled(false);
      ui->actionRefresh->setDisabled(false);

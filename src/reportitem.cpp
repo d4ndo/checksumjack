@@ -78,18 +78,6 @@ QString *ReportItem::filePath() const
     return mfilePath;
 }
 
-
-//void ReportItem::setfilePath(const QString &filePath)
-//{
-//    mfilePath = filePath;
-//}
-
-
-//QString ReportItem::getfilePath() const
-//{
-//    return this->mfilePath;
-//}
-
 QTableWidgetItem *ReportItem::fileItem() const
 {
     return mfileItem;

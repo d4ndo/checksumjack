@@ -61,7 +61,6 @@ bool FileIO::openFileRead(void)
 
 void FileIO::cosefile(void)
 {
-    //mdata.close();
     mfin.close();
 }
 

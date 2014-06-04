@@ -63,7 +63,6 @@ void FilterSettings::printIncludeFilter(QString filterName)
         m_tableIncludeFilter.at(j)->setTextAlignment(Qt::AlignLeft);
         ui->tableWidget->setItem(j,0, m_tableIncludeFilter.at(j));
     }
-    //ui->tableWidget->resizeColumnsToContents();
     ui->tableWidget->clearSpans();
     ui->tableWidget->blockSignals(false);
 }
@@ -81,7 +80,6 @@ void FilterSettings::printExcludeFilter(QString filterName)
         m_tableExcludeFilter.at(j)->setTextAlignment(Qt::AlignLeft);
         ui->tableWidget_2->setItem(j,0, m_tableExcludeFilter.at(j));
     }
-    //ui->tableWidget_2->resizeColumnsToContents();
     ui->tableWidget_2->clearSpans();
     ui->tableWidget->blockSignals(false);
 }

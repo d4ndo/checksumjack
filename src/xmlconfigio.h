@@ -50,7 +50,6 @@ public:
     void setStyle(QString&);
 
 private:
-//    void readIndexElement();
     void readAll(void);
     void readDefaultHash(void);
     void readHashFileProperties(void);
