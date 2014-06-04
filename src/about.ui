@@ -20,7 +20,7 @@
    <string>Dialog</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../ResourceCheckSumJack.qrc">
+   <iconset resource="ResourceCheckSumJack.qrc">
     <normaloff>:/new/prefix1/icon/checksumjack.png</normaloff>:/new/prefix1/icon/checksumjack.png</iconset>
   </property>
   <property name="accessibleDescription">
@@ -61,7 +61,7 @@
           <enum>Qt::PlainText</enum>
          </property>
          <property name="pixmap">
-          <pixmap resource="../ResourceCheckSumJack.qrc">:/new/prefix1/icon/checksumjack.png</pixmap>
+          <pixmap resource="ResourceCheckSumJack.qrc">:/new/prefix1/icon/checksumjack.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -130,7 +130,7 @@
          <item>
           <widget class="QLabel" name="label_3">
            <property name="text">
-            <string>Version 0.3.4-2 (Qt &gt; 5.x)</string>
+            <string>Version 0.3.5-1 (Qt &gt; 5.x)</string>
            </property>
           </widget>
          </item>
@@ -199,7 +199,7 @@
   <tabstop>pushButton</tabstop>
  </tabstops>
  <resources>
-  <include location="../ResourceCheckSumJack.qrc"/>
+  <include location="ResourceCheckSumJack.qrc"/>
  </resources>
  <connections>
   <connection>
