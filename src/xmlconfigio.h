@@ -21,6 +21,7 @@
 
 #include <QtXml>
 #include <QMultiMap>
+#include <QMessageBox>
 
 class XMLConfigIO
 {

@@ -39,7 +39,9 @@ bool XMLConfigIO::readFile(QString filename)
     mfile.setFileName(filename);
     /* If we can't open it, let's show an error message. */
     if (!mfile.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qDebug() << "error openingfile";
+        QMessageBox msgBox;
+        msgBox.setText("Error. Can not open config file.");
+        msgBox.exec();
         return false;
      }
 
@@ -61,10 +63,14 @@ bool XMLConfigIO::readFile(QString filename)
     mfile.close();
     if(reader.hasError())
     {
-        qDebug() << "reader has Error";
+        QMessageBox msgBox;
+        msgBox.setText("Error. Can not read config file.");
+        msgBox.exec();
         return false;
     } else if (mfile.error() != QFile::NoError) {
-            qDebug() << "error file";
+            QMessageBox msgBox;
+            msgBox.setText("Error. No file.");
+            msgBox.exec();
             return false;
     }
     return true;
@@ -75,7 +81,9 @@ bool XMLConfigIO::writeToFile(QString filename)
     mfile.setFileName(filename);
     /* If we can't open it, let's show an error message. */
     if (!mfile.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        qDebug() << "error opening file";
+        QMessageBox msgBox;
+        msgBox.setText("Error. Can not open config file for writing.");
+        msgBox.exec();
         return false;
      }
 
@@ -95,7 +103,9 @@ bool XMLConfigIO::writeToFile(QString filename)
     mfile.close();
     if(mfile.error())
     {
-        qDebug() << "error closeing file";
+        QMessageBox msgBox;
+        msgBox.setText("Error. Can not close config file.");
+        msgBox.exec();
         return false;
     }
     return true;
