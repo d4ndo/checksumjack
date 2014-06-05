@@ -1,7 +1,7 @@
 ChecksumJack depends on 
 
-Qt > 5.x 
-openSSL
+* Qt > 5.x
+* openSSL
 
 How to compile :
 
