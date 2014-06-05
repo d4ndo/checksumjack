@@ -29,12 +29,7 @@ buildtools needed:
 * make, 
 * gcc or clang
 
-```bash
-cd src
-qmake -o Makefile checksumJack.pro
-make
-make install
-```
+[README.md linux](https://github.com/d4ndo/checksumjack/blob/master/linux/README.md)
 
 ## WINDOWS
 
