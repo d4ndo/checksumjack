@@ -1,3 +1,5 @@
+Installation guide
+
 ChecksumJack depends on 
 
 * Qt > 5.x
@@ -7,13 +9,13 @@ ChecksumJack depends on
 apt-get install libssl-dev qt5
 ```
 
-How to compile :
-
-clone the repository from github.
+clone the repository from github:
 
 ```bash
 git clone https://github.com/d4ndo/checksumjack.git
 ```
+
+compile:
 
 ```bash
 cd checksumjack/src/
@@ -24,7 +26,7 @@ make install
 
 IMPORTANT
 
-The config file is needed.
+The config file filter.xml is needed:
 
 ```bash
 mkdir ~/.checksumJack
