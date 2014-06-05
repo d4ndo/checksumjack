@@ -48,7 +48,8 @@ C:\Qt\Qt5.2.1\5.2.1\msvc2012_64\bin\
 * icuin51.dll
 * icuuc51.dll
 * d3dcompiler_46.dll
-* C:\Qt\Qt5.2.1\5.2.1\msvc2012_64\plugins\platforms
+
+C:\Qt\Qt5.2.1\5.2.1\msvc2012_64\plugins\platforms\
 * qwindows.dll
 * qminimal.dll
 
