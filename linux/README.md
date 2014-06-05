@@ -3,9 +3,13 @@ ChecksumJack depends on
 * Qt > 5.x
 * openSSL
 
+```bash
+apt-get install libssl-dev qt5
+```
+
 How to compile :
 
-clone the reopsitory from github.
+clone the repository from github.
 
 ```bash
 git clone https://github.com/d4ndo/checksumjack.git
@@ -18,20 +22,20 @@ make
 make install
 ```
 
-Prepare for desktop (gnome nautilus):
-
-```bash
-sudo cp /linux/checksumjack.xml /usr/share/mime/packages/
-sudo cp /linux/checksumjack.desktop /usr/share/applications/
-sudo update-mime-database /usr/share/mime
-sudo cp /src/icon/48.png .local/share/icons/
-```
-
 IMPORTANT
 
 The config file is needed.
 
 ```bash
 mkdir ~/.checksumJack
-cp /linux/filter.xml ~/.checksumJack/
+cp ../linux/filter.xml ~/.checksumJack/
+```
+
+Prepare for desktop (gnome nautilus):
+
+```bash
+cp /icon/48.png .local/share/icons/
+sudo cp ../linux/checksumjack.xml /usr/share/mime/packages/
+sudo cp ../linux/checksumjack.desktop /usr/share/applications/
+sudo update-mime-database /usr/share/mime
 ```
