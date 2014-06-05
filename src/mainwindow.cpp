@@ -1731,13 +1731,12 @@ void MainWindow::tableWidget_DoubleClick(QTableWidgetItem *t)
  */
 void MainWindow::verifyCheckSum_triggered()
 {
-    int ret;
     QString x = ui->tableWidget->selectedItems().at(0)->text();
     VerifyDialog verifyDialog;
     verifyDialog.setCheckSum1(x);
     verifyDialog.setWindowTitle("Compare Digest");
     verifyDialog.show();
-    ret = verifyDialog.exec();
+    verifyDialog.exec();
 }
 
 /*
