@@ -4,8 +4,6 @@ How to create the ChecksumJack Installer for Windows 7/8
 Install nsis.
 http://nsis.sourceforge.net/Main_Page
 
-***
-
 #COPY
 
 Copy the following files to the /checksumJack/windows directory:
