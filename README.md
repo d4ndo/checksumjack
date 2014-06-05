@@ -33,5 +33,7 @@ buildtools needed:
 
 ## WINDOWS
 
+[README.md windows](https://github.com/d4ndo/checksumjack/blob/master/windows/README.md)
+
 Get installer from www.ChecksumJack.org
 
