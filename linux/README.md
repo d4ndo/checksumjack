@@ -1,4 +1,4 @@
-Installation guide
+# Linux installation guide
 
 ChecksumJack depends on 
 
