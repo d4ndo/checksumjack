@@ -9,13 +9,13 @@ ChecksumJack depends on
 apt-get install libssl-dev qt5
 ```
 
-clone the repository from github:
+Clone the repository from github:
 
 ```bash
 git clone https://github.com/d4ndo/checksumjack.git
 ```
 
-compile:
+Compile:
 
 ```bash
 cd checksumjack/src/
