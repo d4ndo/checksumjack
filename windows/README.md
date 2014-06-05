@@ -1,11 +1,13 @@
 # Windows 7/8 installation guide
 
 Install nsis.
-http://nsis.sourceforge.net/Main_Page
-Install QT5.x 
-http://qt.digia.com/
+* http://nsis.sourceforge.net/Main_Page
+
+Install QT5.x.
+* http://qt.digia.com/
+
 Download the newest OpenSSL library.
-http://www.openssl.org/source/
+* http://www.openssl.org/source/
 
 # Compile 
 
