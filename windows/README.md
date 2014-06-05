@@ -10,7 +10,7 @@ http://nsis.sourceforge.net/Main_Page
 
 Copy the following files to the /checksumJack/windows directory:
 
-## ChecksumJack
+### ChecksumJack
 
 * ../build/checksumJack.exe
 * ../src/icon/checksumJackIcon.ico
@@ -18,7 +18,7 @@ Copy the following files to the /checksumJack/windows directory:
 * ./filter.txt
 * ./Basic.nsi <- open this file with nsis to create the Installer.
 
-## Qt
+### Qt
 
 * C:\Qt\Qt5.2.1\5.2.1\msvc2012_64\bin
 * Qt5Core.dll
@@ -34,11 +34,15 @@ Copy the following files to the /checksumJack/windows directory:
 * qwindows.dll
 * qminimal.dll
 
-## openSSL
+### openSSL
 
 * libeay32.dll
 
-## Microsoft Redistributable
+### Microsoft Redistributable
 
 * vcredist_x64.exe
 
+
+# NSIS
+
+Compile Basic.nsis with NSIS to create the Setup.exe.
