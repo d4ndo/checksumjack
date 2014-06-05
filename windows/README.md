@@ -13,8 +13,8 @@ Important note:
 
 Everything should be compiled with the same compiler. If you download the QT5.2(MVSC2012) library, then please use MVSC2012. 
 
-First thing to do is to compile the openSSL library. Please follow instuctions on README openssl.
-Adapt the ChecksumJack.pro file. So the compiler can link the libraries correct.
+First thing to do is to compile the openSSL library. Please follow instuctions on http://www.openssl.org.
+Adapt the ChecksumJack.pro file, so the compiler can link the libraries correct.
 
 My default path is:
 * C:/Qt/
