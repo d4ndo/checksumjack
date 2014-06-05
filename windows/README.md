@@ -38,7 +38,7 @@ Copy the following files to the /checksumJack/windows directory:
 
 ### Qt
 
-* C:\Qt\Qt5.2.1\5.2.1\msvc2012_64\bin
+C:\Qt\Qt5.2.1\5.2.1\msvc2012_64\bin\
 * Qt5Core.dll
 * Qt5Gui.dll
 * Qt5Widgets.dll
