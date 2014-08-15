@@ -24,9 +24,9 @@
 		<comment>sha512 digest</comment>
 		<glob pattern="*.sha512"/>
 	</mime-type>
-	<mime-type type="application/ripemd160">
-		<comment>ripemd160 digest</comment>
-		<glob pattern="*.ripemd160"/>
+	<mime-type type="application/rmd160">
+		<comment>rmd160 digest</comment>
+		<glob pattern="*.rmd160"/>
 	</mime-type>
 	<mime-type type="application/whirlpool">
 		<comment>whirlpool digest</comment>
