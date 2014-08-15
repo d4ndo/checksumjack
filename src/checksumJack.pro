@@ -3,7 +3,7 @@
 # -------------------------------------------------
 TARGET = checksumJack
 DESTDIR = ../build/
-target.path = /usr/local/bin/
+target.path = /usr/bin/
 unix:INCLUDEPATH += "/usr/include"
 unix:LIBS +=  -L"/usr/lib/" -lssl -lcrypto
 
