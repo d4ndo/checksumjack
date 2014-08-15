@@ -6,7 +6,7 @@ ChecksumJack depends on
 * openSSL
 
 ```bash
-apt-get install libssl-dev qt5
+apt-get install libssl-dev qt5-default
 ```
 
 Clone the repository from github:
@@ -26,18 +26,17 @@ make install
 
 IMPORTANT
 
-The config file filter.xml is needed:
+The file `filter.xml` is necessary.
 
 ```bash
 mkdir ~/.checksumJack
 cp ../linux/filter.xml ~/.checksumJack/
 ```
 
-Prepare for desktop (gnome nautilus):
+Refresh mime-type, desktop and icon database:
 
 ```bash
-cp /icon/48.png .local/share/icons/
-sudo cp ../linux/checksumjack.xml /usr/share/mime/packages/
-sudo cp ../linux/checksumjack.desktop /usr/share/applications/
-sudo update-mime-database /usr/share/mime
+sudo update-mime-database /usr/share/mime/
+sudo update-icon-caches /usr/local/share/icons/
+sudo update-desktop-database
 ```
