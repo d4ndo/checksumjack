@@ -1,0 +1,6 @@
+/build/
+/src/Makefile
+/src/*.o
+/src/moc_*.*
+/src/ui_*.*
+/src/qrc_*.*
