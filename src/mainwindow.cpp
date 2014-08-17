@@ -295,7 +295,9 @@ void MainWindow::on_actionOpen_Hash_File_triggered()
     if(!mchecksumfiles.isEmpty())
     {
         rootpath();
+        pre();
         calculateValid();
+        post();
     }
 }
 
@@ -1151,6 +1153,8 @@ void MainWindow::pre()
     ui->commandLinkButtonClearAll_2->setDisabled(true);
     ui->commandLinkButtonSaveChecksum->setDisabled(true);
     ui->commandLinkButtonOpenCheckSumFile->setDisabled(true);
+    ui->actionOpen_file->setDisabled(true);
+    ui->actionOpen_dir->setDisabled(true);
     ui->actionRefresh->setDisabled(true);
     ui->actionClear_All->setDisabled(true);
 }
@@ -1166,6 +1170,8 @@ void MainWindow::post()
      ui->commandLinkButtonClearAll_2->setDisabled(false);
      ui->commandLinkButtonSaveChecksum->setDisabled(false);
      ui->commandLinkButtonOpenCheckSumFile->setDisabled(false);
+     ui->actionOpen_file->setDisabled(false);
+     ui->actionOpen_dir->setDisabled(false);
      ui->actionRefresh->setDisabled(false);
      ui->actionClear_All->setDisabled(false);
 }
