@@ -454,7 +454,7 @@ void MainWindow::on_actionAbout_triggered()
     aboutDia.exec();
 }
 
-void MainWindow::comboIndexChanged(QString setfilter)
+void MainWindow::comboIndexChanged(void)
 {
     ui->labelProgress->setMovie(m_movie);
     pre();

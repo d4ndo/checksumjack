@@ -59,7 +59,7 @@ public:
     void callActionOpenFile(QString &argument);
 
 public slots:
-        void comboIndexChanged(QString);
+        void comboIndexChanged(void);
         void checkBoxtoggle(bool);
         void tableWidget_DoubleClick(QTableWidgetItem *t);
 
