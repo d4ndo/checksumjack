@@ -7,7 +7,18 @@ Original author:
 Contributors:
 
 Images Authors:
-* files: icon/*.*
+
+Content set by:
+Dmitry Baranovskiy
+path for files: icon/*.svg
+
+svg frame set by:
+Daniel Dörrhöfer
+svg frame for files: icon/*.svg
+
+License: http://raphaeljs.com/license.html
+
+All png files are created from svg files.
 
 Translations authors:
 * files: lang/*.ts
