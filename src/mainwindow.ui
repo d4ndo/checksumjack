@@ -42,9 +42,6 @@
    <layout class="QVBoxLayout" name="verticalLayout_17">
     <item>
      <widget class="QTabWidget" name="tabWidget">
-      <property name="toolTip">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
       <property name="tabPosition">
        <enum>QTabWidget::North</enum>
       </property>
@@ -66,7 +63,7 @@
       <widget class="QWidget" name="tabChecksum">
        <attribute name="icon">
         <iconset resource="ResourceCheckSumJack.qrc">
-         <normaloff>:/new/prefix1/icon/validate.png</normaloff>:/new/prefix1/icon/validate.png</iconset>
+         <normaloff>:/new/prefix1/icon/check.png</normaloff>:/new/prefix1/icon/check.png</iconset>
        </attribute>
        <attribute name="title">
         <string>Checksum</string>
@@ -457,7 +454,7 @@
                </property>
                <property name="icon">
                 <iconset resource="ResourceCheckSumJack.qrc">
-                 <normaloff>:/new/prefix1/icon/save.png</normaloff>:/new/prefix1/icon/save.png</iconset>
+                 <normaloff>:/new/prefix1/icon/savehash.png</normaloff>:/new/prefix1/icon/savehash.png</iconset>
                </property>
               </widget>
              </item>
@@ -471,7 +468,7 @@
       <widget class="QWidget" name="tabVerify">
        <attribute name="icon">
         <iconset resource="ResourceCheckSumJack.qrc">
-         <normaloff>:/new/prefix1/icon/compare.png</normaloff>:/new/prefix1/icon/compare.png</iconset>
+         <normaloff>:/new/prefix1/icon/verify.png</normaloff>:/new/prefix1/icon/verify.png</iconset>
        </attribute>
        <attribute name="title">
         <string>Verify</string>
@@ -776,7 +773,7 @@
                    <item>
                     <widget class="QRadioButton" name="radioNoRootPath">
                      <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;No root path at all. Some hash files have full path to  every hash digest.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;No root path at all. Some hash files include full path to every hash digest.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                      </property>
                      <property name="text">
                       <string>No RootPath</string>
@@ -977,14 +974,14 @@
              <item>
               <widget class="QCommandLinkButton" name="commandLinkButtonOpenCheckSumFile">
                <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Open Hash File&lt;/span&gt;&lt;/p&gt;&lt;p&gt;You can also drag and drop the hash file(s) from the Windows Explorer onto this applikation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Open Hash File&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Also try to drag and drop the hash file(s) onto this applikation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="text">
                 <string>Open Hash File</string>
                </property>
                <property name="icon">
                 <iconset resource="ResourceCheckSumJack.qrc">
-                 <normaloff>:/new/prefix1/icon/openhashfile.png</normaloff>:/new/prefix1/icon/openhashfile.png</iconset>
+                 <normaloff>:/new/prefix1/icon/loadhash.png</normaloff>:/new/prefix1/icon/loadhash.png</iconset>
                </property>
               </widget>
              </item>
@@ -1010,7 +1007,7 @@
      <x>0</x>
      <y>0</y>
      <width>1072</width>
-     <height>21</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -1101,7 +1098,7 @@
    </property>
    <property name="icon">
     <iconset resource="ResourceCheckSumJack.qrc">
-     <normaloff>:/new/prefix1/icon/addfile2.png</normaloff>:/new/prefix1/icon/addfile2.png</iconset>
+     <normaloff>:/new/prefix1/icon/addfile.png</normaloff>:/new/prefix1/icon/addfile.png</iconset>
    </property>
    <property name="text">
     <string>Select File(s)...</string>
@@ -1156,7 +1153,7 @@
   <action name="actionOpen_Hash_File">
    <property name="icon">
     <iconset resource="ResourceCheckSumJack.qrc">
-     <normaloff>:/new/prefix1/icon/openhashfile.png</normaloff>:/new/prefix1/icon/openhashfile.png</iconset>
+     <normaloff>:/new/prefix1/icon/loadhash.png</normaloff>:/new/prefix1/icon/loadhash.png</iconset>
    </property>
    <property name="text">
     <string>Open Hash File...</string>
@@ -1165,7 +1162,7 @@
   <action name="actionSave_Hash_File">
    <property name="icon">
     <iconset resource="ResourceCheckSumJack.qrc">
-     <normaloff>:/new/prefix1/icon/save.png</normaloff>:/new/prefix1/icon/save.png</iconset>
+     <normaloff>:/new/prefix1/icon/savehash.png</normaloff>:/new/prefix1/icon/savehash.png</iconset>
    </property>
    <property name="text">
     <string>Save as Hash File...</string>
@@ -1292,25 +1289,40 @@
    </property>
   </action>
   <action name="actionProperties">
+   <property name="icon">
+    <iconset resource="ResourceCheckSumJack.qrc">
+     <normaloff>:/new/prefix1/icon/properties.png</normaloff>:/new/prefix1/icon/properties.png</iconset>
+   </property>
    <property name="text">
     <string>Properties...</string>
+   </property>
+  </action>
+  <action name="actionRunscript">
+   <property name="text">
+    <string>Run script</string>
    </property>
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
-  <tabstop>tabWidget</tabstop>
-  <tabstop>checkBox</tabstop>
-  <tabstop>comboBox</tabstop>
   <tabstop>commandLinkButtonRefresh</tabstop>
   <tabstop>commandLinkButtonStop</tabstop>
   <tabstop>commandLinkButtonClearAll</tabstop>
   <tabstop>commandLinkButtonSaveChecksum</tabstop>
-  <tabstop>tableWidget_2</tabstop>
+  <tabstop>comboBox</tabstop>
+  <tabstop>checkBox</tabstop>
+  <tabstop>tabWidget</tabstop>
   <tabstop>commandLinkButtonRefresh_2</tabstop>
   <tabstop>commandLinkButtonStop_2</tabstop>
   <tabstop>commandLinkButtonClearAll_2</tabstop>
   <tabstop>commandLinkButtonOpenCheckSumFile</tabstop>
+  <tabstop>toolButton</tabstop>
+  <tabstop>radioStatic</tabstop>
+  <tabstop>radioByTag</tabstop>
+  <tabstop>radioDynamic</tabstop>
+  <tabstop>radioNoRootPath</tabstop>
+  <tabstop>tableWidget</tabstop>
+  <tabstop>tableWidget_2</tabstop>
  </tabstops>
  <resources>
   <include location="ResourceCheckSumJack.qrc"/>

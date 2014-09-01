@@ -70,6 +70,10 @@
              <property name="text">
               <string>New Filter</string>
              </property>
+             <property name="icon">
+              <iconset resource="ResourceCheckSumJack.qrc">
+               <normaloff>:/new/prefix1/icon/savehash.png</normaloff>:/new/prefix1/icon/savehash.png</iconset>
+             </property>
             </widget>
            </item>
            <item>
@@ -79,7 +83,7 @@
              </property>
              <property name="icon">
               <iconset resource="ResourceCheckSumJack.qrc">
-               <normaloff>:/new/prefix1/icon/remove.png</normaloff>:/new/prefix1/icon/remove.png</iconset>
+               <normaloff>:/new/prefix1/icon/clearall.png</normaloff>:/new/prefix1/icon/clearall.png</iconset>
              </property>
             </widget>
            </item>
