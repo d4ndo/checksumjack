@@ -4,16 +4,17 @@
         <file>icon/filter.png</file>
         <file>icon/minus.png</file>
         <file>icon/plus.png</file>
-        <file>icon/remove.png</file>
         <file>icon/clearall.png</file>
-        <file>icon/compare.png</file>
         <file>icon/refresh.png</file>
-        <file>icon/save.png</file>
         <file>icon/stop.png</file>
         <file>icon/validate.png</file>
         <file>icon/loader2.gif</file>
-        <file>icon/addfile2.png</file>
         <file>icon/addfolder.png</file>
-        <file>icon/openhashfile.png</file>
+        <file>icon/check.png</file>
+        <file>icon/savehash.png</file>
+        <file>icon/addfile.png</file>
+        <file>icon/verify.png</file>
+        <file>icon/properties.png</file>
+        <file>icon/loadhash.png</file>
     </qresource>
 </RCC>
