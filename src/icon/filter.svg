@@ -9,40 +9,36 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   id="svg2"
    version="1.1"
-   inkscape:version="0.48.2 r9819"
+   width="60"
+   height="60"
+   id="svg2"
+   inkscape:version="0.48.5 r10040"
    sodipodi:docname="filter.svg">
-  <defs
-     id="defs4">
-    <inkscape:perspective
-       sodipodi:type="inkscape:persp3d"
-       inkscape:vp_x="238.50913 : 1050.5267 : 1"
-       inkscape:vp_y="987.88108 : -155.2127 : 0"
-       inkscape:vp_z="123.01622 : 315.44988 : 1"
-       inkscape:persp3d-origin="7.494558 : 710.21164 : 1"
-       id="perspective2991" />
-  </defs>
+  <title
+     id="title2992">filter icon</title>
   <sodipodi:namedview
-     id="base"
      pagecolor="#ffffff"
      bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.49497475"
-     inkscape:cx="461.76017"
-     inkscape:cy="914.49115"
-     inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:window-width="1001"
+     inkscape:window-height="480"
+     id="namedview15"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1018"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:zoom="3.9333333"
+     inkscape:cx="30"
+     inkscape:cy="30"
+     inkscape:window-x="471"
+     inkscape:window-y="118"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -51,102 +47,97 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title>filter icon</dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Daniel Dörrhöfer</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Daniel Dörrhöfer</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:publisher>
+          <cc:Agent>
+            <dc:title>Daniel Dörrhöfer</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <cc:license
+           rdf:resource="" />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Ebene 1"
-     inkscape:groupmode="layer"
+     transform="translate(0,-992.36215)"
      id="layer1">
-    <rect
-       style="fill:#241f1c;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none"
-       id="rect3827"
-       width="115.15739"
-       height="20.203053"
-       x="311.12698"
-       y="397.78329"
-       ry="1.2025626" />
-    <rect
-       ry="1.6835876"
-       y="302.03558"
-       x="-449.30109"
-       height="28.284273"
-       width="88.893417"
-       id="rect3829"
-       style="fill:#241f1c;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none"
-       transform="matrix(0,-1,1,0,0,0)" />
-    <rect
-       style="fill:#241f1c;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="rect3811"
-       width="22.223356"
-       height="161.6244"
-       x="414.16251"
-       y="387.68179"
-       ry="1.9241002" />
-    <path
-       sodipodi:type="star"
-       style="fill:#241f1c;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none"
-       id="path3021"
-       sodipodi:sides="3"
-       sodipodi:cx="163.64471"
-       sodipodi:cy="252.32137"
-       sodipodi:r1="167.77814"
-       sodipodi:r2="182.03497"
-       sodipodi:arg1="0.037507678"
-       sodipodi:arg2="1.0847052"
-       inkscape:flatsided="true"
-       inkscape:rounded="0"
-       inkscape:randomized="0"
-       d="M 331.30485,258.61286 74.366055,394.37355 85.26324,103.97768 z"
-       inkscape:transform-center-x="7.9040744"
-       inkscape:transform-center-y="-32.24604"
-       transform="matrix(0.05964621,1.009964,-1.244649,0.04839961,727.85204,98.091765)" />
-    <rect
-       style="fill:#241f1c;fill-opacity:0;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none"
-       id="rect3838"
-       width="173.74623"
-       height="22.223356"
-       x="327.28943"
-       y="155.34673"
-       ry="1.2025626"
-       inkscape:export-filename="C:\Users\Daniel\Documents\bom\icon\filter.png"
-       inkscape:export-xdpi="7"
-       inkscape:export-ydpi="7" />
-    <rect
-       ry="1.2025626"
-       y="561.42804"
-       x="337.39096"
-       height="22.223356"
-       width="173.74623"
-       id="rect3840"
-       style="fill:#241f1c;fill-opacity:0;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none"
-       inkscape:export-filename="C:\Users\Daniel\Documents\bom\icon\filter.png"
-       inkscape:export-xdpi="7"
-       inkscape:export-ydpi="7" />
-    <rect
-       style="fill:#241f1c;fill-opacity:0;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none"
-       id="rect3842"
-       width="173.74623"
-       height="22.223356"
-       x="-477.58536"
-       y="209.10158"
-       ry="1.2025626"
-       transform="matrix(0,-1,1,0,0,0)"
-       inkscape:export-filename="C:\Users\Daniel\Documents\bom\icon\filter.png"
-       inkscape:export-xdpi="7"
-       inkscape:export-ydpi="7" />
-    <rect
-       transform="matrix(0,-1,1,0,0,0)"
-       ry="1.2025626"
-       y="601.04077"
-       x="-487.68689"
-       height="22.223356"
-       width="173.74623"
-       id="rect3844"
-       style="fill:#241f1c;fill-opacity:0;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none"
-       inkscape:export-filename="C:\Users\Daniel\Documents\bom\icon\filter.png"
-       inkscape:export-xdpi="7"
-       inkscape:export-ydpi="7" />
+    <g
+       transform="matrix(0.12459733,0,0,0.12459733,-21.855272,976.32355)"
+       id="g2991">
+      <rect
+         width="115.15739"
+         height="20.203053"
+         ry="1.2025626"
+         x="311.12698"
+         y="397.78329"
+         id="rect3827"
+         style="fill:#241f1c;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none" />
+      <rect
+         width="88.893417"
+         height="28.284273"
+         ry="1.6835876"
+         x="-449.30109"
+         y="302.03558"
+         transform="matrix(0,-1,1,0,0,0)"
+         id="rect3829"
+         style="fill:#241f1c;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none" />
+      <rect
+         width="22.223356"
+         height="161.6244"
+         ry="1.9241002"
+         x="414.16251"
+         y="387.68179"
+         id="rect3811"
+         style="fill:#241f1c;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+      <path
+         d="M 331.30485,258.61286 74.366055,394.37355 85.26324,103.97768 z"
+         transform="matrix(0.05964621,1.009964,-1.244649,0.04839961,727.85204,98.091765)"
+         id="path3021"
+         style="fill:#241f1c;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none" />
+      <rect
+         width="173.74623"
+         height="22.223356"
+         ry="1.2025626"
+         x="327.28943"
+         y="155.34673"
+         id="rect3838"
+         style="fill:#241f1c;fill-opacity:0;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none" />
+      <rect
+         width="173.74623"
+         height="22.223356"
+         ry="1.2025626"
+         x="337.39096"
+         y="561.42804"
+         id="rect3840"
+         style="fill:#241f1c;fill-opacity:0;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none" />
+      <rect
+         width="173.74623"
+         height="22.223356"
+         ry="1.2025626"
+         x="-477.58536"
+         y="209.10158"
+         transform="matrix(0,-1,1,0,0,0)"
+         id="rect3842"
+         style="fill:#241f1c;fill-opacity:0;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none" />
+      <rect
+         width="173.74623"
+         height="22.223356"
+         ry="1.2025626"
+         x="-487.68689"
+         y="601.04077"
+         transform="matrix(0,-1,1,0,0,0)"
+         id="rect3844"
+         style="fill:#241f1c;fill-opacity:0;stroke:#ffffff;stroke-width:0;stroke-miterlimit:4;stroke-opacity:0;stroke-dasharray:none" />
+    </g>
   </g>
 </svg>
