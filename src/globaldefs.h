@@ -25,7 +25,8 @@
 #define FILTER "/.checksumJack/filter.xml"
 #endif
 
-#define BLOCKSIZE   (65536)
+/* 2^23 4 MiB */
+#define BLOCKSIZE   (8388608)
 
 #define DESKTOP "desktop"
 #define DOCUMENTS "documents"
