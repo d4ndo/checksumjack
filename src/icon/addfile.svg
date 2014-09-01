@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.0"
+   width="60"
+   height="60"
+   id="svg1">
+  <title
+     id="title2982">add file icon</title>
+  <metadata
+     id="metadata3">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>add file icon</dc:title>
+        <dc:description />
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>add file</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://www.openclipart.org">
+            <dc:title>Dmitry Baranovskiy</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Dmitry Baranovskiy</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent>
+            <dc:title>Dmitry Baranovskiy</dc:title>
+          </cc:Agent>
+        </dc:rights>
+        <dc:date />
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://raphaeljs.com/license.html" />
+        <dc:language>en</dc:language>
+        <dc:source>http://raphaeljs.com/icons/</dc:source>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3" />
+  <path
+     d="M 42.808,9.5330001 C 39.32,6.145 35.558,3.431 32.472,3.061 32.304,3.037 32.13,3.023 31.946,3.019 h -20.31 c -0.324,0 -0.644,0.126 -0.872,0.36 -0.226,0.2280001 -0.36,0.548 -0.36,0.874 v 51.5 c 0,0.324 0.126,0.634 0.36,0.87 0.234,0.232 0.542,0.358 0.872,0.358 h 36.728 c 0.324,0 0.634,-0.124 0.868,-0.358 0.234,-0.234 0.364,-0.544 0.364,-0.87 V 21.483 C 49.524,17.505 46.408,13.167 42.808,9.5330001 z M 47.128,54.515 H 12.864 V 5.4790001 h 19.084 v 0.004 c 0.832,-0.05 1.55,0.7720001 2.1,2.6520001 0.5,1.79 0.626,4.1239998 0.624,5.7419998 0.004,1.186 -0.054,1.982 -0.054,1.982 l -0.098,1.304 1.312,0.014 c 0.006,0 3.032,0.036 6,0.71 2.852,0.616 5.082,1.844 5.29,3.234 0.008,0.124 0.01,0.248 0.008,0.364 v 33.03 z"
+     id="path6"
+     style="font-size:12px;fill:#454545;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+</svg>
