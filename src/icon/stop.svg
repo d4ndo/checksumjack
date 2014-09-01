@@ -7,49 +7,38 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   height="60.0000000"
-   id="svg1"
-   inkscape:version="0.48.2 r9819"
-   sodipodi:docname="stop.svg"
-   sodipodi:version="0.32"
    version="1.0"
-   width="60.0000000"
-   x="0"
-   y="0">
+   width="60"
+   height="60"
+   id="svg1">
+  <title
+     id="title2982">stop icon</title>
   <metadata
      id="metadata3">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
-        <dc:title>Part of the Flat Icon Collection (Wed Aug 25 23:29:46 2004)</dc:title>
+        <dc:title>stop icon</dc:title>
         <dc:description />
         <dc:subject>
           <rdf:Bag>
-            <rdf:li>hash</rdf:li>
-            <rdf:li />
-            <rdf:li>action</rdf:li>
-            <rdf:li>computer</rdf:li>
-            <rdf:li>icons</rdf:li>
-            <rdf:li>theme</rdf:li>
+            <rdf:li>stop</rdf:li>
           </rdf:Bag>
         </dc:subject>
         <dc:publisher>
           <cc:Agent
              rdf:about="http://www.openclipart.org">
-            <dc:title>Danny Allen</dc:title>
+            <dc:title> Dmitry Baranovskiy</dc:title>
           </cc:Agent>
         </dc:publisher>
         <dc:creator>
           <cc:Agent>
-            <dc:title>Danny Allen</dc:title>
+            <dc:title> Dmitry Baranovskiy</dc:title>
           </cc:Agent>
         </dc:creator>
         <dc:rights>
           <cc:Agent>
-            <dc:title>Danny Allen</dc:title>
+            <dc:title> Dmitry Baranovskiy</dc:title>
           </cc:Agent>
         </dc:rights>
         <dc:date />
@@ -57,59 +46,14 @@
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
         <cc:license
-           rdf:resource="http://web.resource.org/cc/PublicDomain" />
+           rdf:resource="http://raphaeljs.com/license.html" />
         <dc:language>en</dc:language>
+        <dc:source>http://raphaeljs.com/icons/</dc:source>
       </cc:Work>
-      <cc:License
-         rdf:about="http://web.resource.org/cc/PublicDomain">
-        <cc:permits
-           rdf:resource="http://web.resource.org/cc/Reproduction" />
-        <cc:permits
-           rdf:resource="http://web.resource.org/cc/Distribution" />
-        <cc:permits
-           rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
-      </cc:License>
     </rdf:RDF>
   </metadata>
-  <sodipodi:namedview
-     bordercolor="#666666"
-     borderopacity="1.0"
-     id="base"
-     inkscape:cx="31.025929"
-     inkscape:cy="25.599765"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:window-height="1018"
-     inkscape:window-width="1920"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:zoom="9.8238822"
-     pagecolor="#ffffff"
-     showgrid="false"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg1" />
-  <defs
-     id="defs3">
-    <linearGradient
-       id="linearGradient808">
-      <stop
-         id="stop809"
-         offset="0"
-         style="stop-color:#000;stop-opacity:1;" />
-      <stop
-         id="stop810"
-         offset="1"
-         style="stop-color:#fff;stop-opacity:1;" />
-    </linearGradient>
-    <linearGradient
-       id="linearGradient811"
-       xlink:href="#linearGradient808" />
-  </defs>
   <path
-     d="M 30.281250 4.656250 C 16.233856 4.656250 4.843750 16.046356 4.843750 30.093750 C 4.843750 44.141144 16.233856 55.531251 30.281250 55.531250 C 44.328644 55.531250 55.718751 44.141145 55.718750 30.093750 C 55.718750 16.046356 44.328645 4.656250 30.281250 4.656250 z M 17.406250 15.343750 L 43.156250 15.343750 C 44.264250 15.343750 45.156252 16.235749 45.156250 17.343750 L 45.156250 43.125000 C 45.156250 44.233000 44.264252 45.124999 43.156250 45.125000 L 17.406250 45.125000 C 16.298250 45.125000 15.406250 44.232999 15.406250 43.125000 L 15.406250 17.343750 C 15.406250 16.235750 16.298250 15.343750 17.406250 15.343750 z "
-     id="path812"
-     style="font-size:12;fill:#b50000;fill-opacity:0.40211638999999999;fill-rule:evenodd;stroke:#333333;stroke-width:2;stroke-dasharray:none;stroke-opacity:1;stroke-miterlimit:4"
-     inkscape:export-filename="C:\Users\Daniel\Documents\checksumjack\icon\stop.png"
-     inkscape:export-xdpi="871.48938"
-     inkscape:export-ydpi="871.48938" />
+     d="M 7.2343912,7.2343909 H 52.765609 V 52.765609 H 7.2343912 z"
+     id="path701"
+     style="font-size:12px;fill:#454545;fill-opacity:1;fill-rule:evenodd;stroke:none" />
 </svg>
