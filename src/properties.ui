@@ -7,11 +7,15 @@
     <x>0</x>
     <y>0</y>
     <width>417</width>
-    <height>261</height>
+    <height>290</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="ResourceCheckSumJack.qrc">
+    <normaloff>:/new/prefix1/icon/properties.png</normaloff>:/new/prefix1/icon/properties.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_7">
    <item>
@@ -248,7 +252,9 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="ResourceCheckSumJack.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>

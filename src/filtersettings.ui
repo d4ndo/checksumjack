@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="ResourceCheckSumJack.qrc">
-    <normaloff>:/new/prefix1/icon/checksumjack.png</normaloff>:/new/prefix1/icon/checksumjack.png</iconset>
+    <normaloff>:/new/prefix1/icon/filter.png</normaloff>:/new/prefix1/icon/filter.png</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_5">
    <item>

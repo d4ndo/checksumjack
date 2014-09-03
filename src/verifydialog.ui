@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="ResourceCheckSumJack.qrc">
+    <normaloff>:/new/prefix1/icon/verify.png</normaloff>:/new/prefix1/icon/verify.png</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
@@ -150,7 +154,9 @@
    </slots>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="ResourceCheckSumJack.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>VerifyDialog</sender>
