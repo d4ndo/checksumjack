@@ -34,7 +34,8 @@ SOURCES += main.cpp \
     displayrandomart.cpp \
     hashfileio.cpp \
     rootpath.cpp \
-    properties.cpp
+    properties.cpp \
+    options.cpp
 HEADERS += \
     about.h \
     filtersettings.h \
@@ -47,7 +48,8 @@ HEADERS += \
     displayrandomart.h \
     hashfileio.h \
     rootpath.h \
-    properties.h
+    properties.h \
+    options.h
 FORMS += mainwindow.ui \
     about.ui \
     filtersettings.ui \

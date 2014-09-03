@@ -1,7 +1,7 @@
 #ifndef OPTIONS_H
 #define OPTIONS_H
 
-#include <QObject>
+#include <QSettings>
 
 class Options : public QObject
 {
@@ -9,9 +9,16 @@ class Options : public QObject
 public:
     explicit Options(QObject *parent = 0);
 
+    void readSettings();
+    void writeSettings();
+
 signals:
 
 public slots:
+
+private:
+    bool m_addRootPath;
+
 
 };
 

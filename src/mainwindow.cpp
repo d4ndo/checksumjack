@@ -1928,4 +1928,3 @@ void MainWindow::on_toolButton_clicked()
         ui->labelRootPath2->setText(mdir2.absolutePath()+ "/");
         ui->actionRefresh->activate(QAction::Trigger);
 }
-
