@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <csj>
-    <defaulthash>SHA256</defaulthash>
-    <hashfileproperties>
-        <addrootpath>true</addrootpath>
-        <rootpathtyp>dynamic</rootpathtyp>
-        <style>MD5</style>
-    </hashfileproperties>
     <filter name="All files">
         <include>
             <f>*</f>
