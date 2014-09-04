@@ -21,17 +21,19 @@
 
 #include <QDialog>
 #include "xmlconfigio.h"
+#include "options.h"
 
 namespace Ui {
 class Properties;
 }
+class Options;
 
 class Properties : public QDialog
 {
     Q_OBJECT
     
 public:
-    explicit Properties(QWidget *parent = 0);
+    explicit Properties(Options *opt, QWidget *parent = 0);
     ~Properties();
     
 private slots:
@@ -45,12 +47,7 @@ private slots:
 
 private:
     Ui::Properties *ui;
-    XMLConfigIO cf;
-    QString m_defaultHash;
-    bool m_addRootPath;
-    QString m_rootPathTyp;
-    QString m_style;
-    QString m_hashtyp;
+    Options *options;
 };
 
 
