@@ -130,7 +130,7 @@
          <item>
           <widget class="QLabel" name="label_3">
            <property name="text">
-            <string>Version 0.3.7 (Qt &gt; 5.x)</string>
+            <string>Version 0.3.8 (Qt &gt; 5.x)</string>
            </property>
           </widget>
          </item>
