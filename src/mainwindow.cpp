@@ -20,14 +20,18 @@
 #include "ui_mainwindow.h"
 #include <QFileDialog>
 #include "rootpath.h"
+#include "options.h"
 
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+    options(new Options(this))
 {
      ui->setupUi(this);
      m_arg.clear();
+     initProperties();
+     initFilterSettings();
      init();
      init_hashtyp();
      initInclude();
@@ -35,7 +39,8 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::MainWindow(QStringList& arg, QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+    options(new Options(this))
 {
      ui->setupUi(this);
      m_arg.clear();
@@ -43,6 +48,8 @@ MainWindow::MainWindow(QStringList& arg, QWidget *parent) :
      {
          m_arg.append(arg.at(i));
      }
+     initProperties();
+     initFilterSettings();
      init();
      init_hashtyp();
      initInclude();
@@ -50,23 +57,6 @@ MainWindow::MainWindow(QStringList& arg, QWidget *parent) :
 
 void MainWindow::init()
 {
-    cf.readFile(QDir::home().absolutePath() + FILTER);
-    HashGroup = new QActionGroup(this);
-    HashGroup->addAction(ui->actionMD5);
-    HashGroup->addAction(ui->actionSHA_1);
-    HashGroup->addAction(ui->actionRIPEMD_160);
-    HashGroup->addAction(ui->actionSHA_2_224);
-    HashGroup->addAction(ui->actionSHA_2_256);
-    HashGroup->addAction(ui->actionSHA_2_384);
-    HashGroup->addAction(ui->actionSHA_2_512);
-    HashGroup->addAction(ui->actionWhirlpool);
-    m_includeFileFilter = cf.getIncludeFileFilter();
-    m_excludeFileFilter = cf.getExcludeFileFilter();
-    m_key = cf.getKey();
-    m_hashtyp = cf.getDefaultHash();
-    m_addRootPath = cf.isAddRootPath();
-    m_rootPathTyp = cf.getRootPathTyp();
-
     checksumMenu = new QMenu(this);
     verifyCheckSum = new QAction(this);
     openSelected = new QAction(this);
@@ -74,6 +64,8 @@ void MainWindow::init()
     checksumMenu2 = new QMenu(this);
     open2Selected = new QAction(this);
 
+    connect(options, SIGNAL(initProperties()), this, SLOT(initProperties()));
+    connect(options, SIGNAL(init_hashtyp()), this, SLOT(init_hashtyp()));
     connect(ui->tableWidget, SIGNAL(itemDoubleClicked(QTableWidgetItem*)), this, SLOT(tableWidget_DoubleClick(QTableWidgetItem*)));
     connect(this->verifyCheckSum, SIGNAL(triggered()), this, SLOT(verifyCheckSum_triggered()));
     connect(this->openSelected, SIGNAL(triggered()), this, SLOT(openSelected_triggered()));
@@ -139,11 +131,37 @@ void MainWindow::initInclude()
         {
             m_all += ";;";
         }
-   }
+    }
+}
+
+void MainWindow::initProperties()
+{
+    options->readSettings();
+    m_hashtyp = options->defaultHash();
+    m_rootPathTyp = options->rootPathTyp();
+    m_style = options->style();
+}
+
+void MainWindow::initFilterSettings()
+{
+    cf.readFile(QDir::home().absolutePath() + FILTER);
+    HashGroup = new QActionGroup(this);
+    HashGroup->addAction(ui->actionMD5);
+    HashGroup->addAction(ui->actionSHA_1);
+    HashGroup->addAction(ui->actionRIPEMD_160);
+    HashGroup->addAction(ui->actionSHA_2_224);
+    HashGroup->addAction(ui->actionSHA_2_256);
+    HashGroup->addAction(ui->actionSHA_2_384);
+    HashGroup->addAction(ui->actionSHA_2_512);
+    HashGroup->addAction(ui->actionWhirlpool);
+    m_includeFileFilter = cf.getIncludeFileFilter();
+    m_excludeFileFilter = cf.getExcludeFileFilter();
+    m_key = cf.getKey();
 }
 
 MainWindow::~MainWindow()
 {
+    delete options;
     delete ui;
 }
 
@@ -358,7 +376,7 @@ void MainWindow::on_actionSave_Hash_File_triggered()
 
         if(!fileName.isEmpty())
         {
-            if (m_addRootPath)
+            if (options->addRootPath())
             {
                 QString temp;
                 /* Add root path to file name dynamic */
@@ -454,8 +472,9 @@ void MainWindow::on_actionAbout_triggered()
     aboutDia.exec();
 }
 
-void MainWindow::comboIndexChanged(void)
+void MainWindow::comboIndexChanged(QString index)
 {
+    UNUSED(index);
     ui->labelProgress->setMovie(m_movie);
     pre();
     m_movie->start();
@@ -1182,20 +1201,16 @@ void MainWindow::post()
 void MainWindow::on_actionProperties_triggered()
 {
     int ret;
-    Properties propertiesDia;
+    Properties propertiesDia(options);
     propertiesDia.setWindowTitle(tr("Properties"));
     propertiesDia.show();
     ret = propertiesDia.exec();
     switch(ret)
     {
         case 1:
-            cf.readFile(QDir::home().absolutePath() + FILTER);
-            m_hashtyp = cf.getDefaultHash();
-            m_addRootPath = cf.isAddRootPath();
-            m_rootPathTyp = cf.getRootPathTyp();
-            m_style = cf.getStyle();
+            //cf.readFile(QDir::home().absolutePath() + FILTER);
+            options->writeSettings();
             ui->tabWidget->setCurrentIndex(0);
-            init_hashtyp();
             break;
         case 0:
             break;

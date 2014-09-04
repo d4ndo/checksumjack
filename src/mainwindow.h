@@ -49,6 +49,8 @@ namespace Ui {
     class MainWindow;
 }
 
+class Options;
+
 class MainWindow : public QMainWindow {
     Q_OBJECT
 public:
@@ -58,17 +60,15 @@ public:
     void callActionOpenChecksumFile();
     void callActionOpenFile(QString &argument);
 
-public slots:
-        void comboIndexChanged(void);
-        void checkBoxtoggle(bool);
-        void tableWidget_DoubleClick(QTableWidgetItem *t);
-
 protected:
     void changeEvent(QEvent *e);
     MainWindow& operator=(const MainWindow& mw);
     MainWindow(const MainWindow& mw);
 
 private slots:
+    void comboIndexChanged(QString);
+    void checkBoxtoggle(bool);
+    void tableWidget_DoubleClick(QTableWidgetItem *t);
     void on_actionOpen_file_triggered();
     void on_actionOpen_dir_triggered();
     void on_actionOpen_Hash_File_triggered();
@@ -104,10 +104,13 @@ private slots:
     void on_radioStatic_clicked(bool checked);
     void on_radioNoRootPath_clicked();
     void on_toolButton_clicked();
+    void initProperties();
+    void init_hashtyp();
 
 private:
     void init();
     void initInclude();
+    void initFilterSettings(void);
     void scanDir(const QString &rootpath, const QString &path);
     void calculateCheckSum();
     void calculateValid();
@@ -118,7 +121,6 @@ private:
     void sortreport(void);
     void rootpath(void);
     void reInialise_ComboBox(void);
-    void init_hashtyp(void);
 
     Ui::MainWindow *ui;
     QStringList m_arg;
@@ -126,6 +128,7 @@ private:
     QString m_hashtyp;
     FileIO pf;
     XMLConfigIO cf;
+    Options *options;
 
     QList<ReportItem> root;
     QList<ReportItem> report;
@@ -146,10 +149,8 @@ private:
     bool mdragflag;
     bool mskip;
     bool mprogress;
-    bool m_addRootPath;
     QString m_rootPathTyp;
     QString m_style;
-
 
     QMenu *checksumMenu;
     QAction *verifyCheckSum;

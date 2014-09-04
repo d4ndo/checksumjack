@@ -42,5 +42,6 @@
 #define LOW     (0)
 #define HIGH    (100)
 #define COLOUR  (255)
+#define UNUSED(x) (void)(x)
 
 #endif // GLOBALDEFS_H
