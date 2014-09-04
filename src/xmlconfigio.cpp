@@ -92,9 +92,6 @@ bool XMLConfigIO::writeToFile(QString filename)
     writer.writeStartDocument();
     writer.writeStartElement("csj");
 
-    writeDefaultHash();
-    writeHashFileProperties();
-
     for (int i = 0; i < m_filter.size(); ++i)
     {
         writeFilter(i);
@@ -145,62 +142,11 @@ void XMLConfigIO::setKey(const QList<QString>& filter)
     m_filter = filter;
 }
 
-QString &XMLConfigIO::getDefaultHash()
-{
-    return m_defaultHash;
-}
-
-void XMLConfigIO::setDefaultHash(QString &defaultHash)
-{
-    m_defaultHash = defaultHash;
-}
-
-bool XMLConfigIO::isAddRootPath()
-{
-    return m_addRootPath;
-}
-
-void XMLConfigIO::AddRootPath(bool addRootPath)
-{
-    m_addRootPath = addRootPath;
-}
-
-QString &XMLConfigIO::getRootPathTyp()
-{
-    return m_rootPathTyp;
-}
-
-void XMLConfigIO::setRootPathTyp(QString &rootPathTyp)
-{
-    m_rootPathTyp = rootPathTyp;
-}
-
-QString XMLConfigIO::getStyle()
-{
-    return m_style;
-}
-
-void XMLConfigIO::setStyle(QString &style)
-{
-    m_style = style;
-}
-
 void XMLConfigIO::readAll(void)
 {
     QStringRef name;
 
     while (!reader.atEnd()) {
-
-        if ((reader.name() == "defaulthash") &&
-            (reader.tokenType() == QXmlStreamReader::StartElement))
-        {
-            readDefaultHash();
-        }
-        if ((reader.name() == "hashfileproperties") &&
-            (reader.tokenType() == QXmlStreamReader::StartElement))
-        {
-            readHashFileProperties();
-        }
         if ((reader.name() == "filter") &&
             (reader.tokenType() == QXmlStreamReader::StartElement))
         {
@@ -217,44 +163,6 @@ void XMLConfigIO::readAll(void)
         {
             readExclude(name.toString());
         }
-        reader.readNext();
-    }
-}
-
-void XMLConfigIO::readDefaultHash(void)
-{
-    m_defaultHash = reader.readElementText();
-}
-
-void XMLConfigIO::readHashFileProperties(void)
-{
-    reader.readNext();
-    while(!(reader.tokenType() == QXmlStreamReader::EndElement &&
-            reader.name() == "hashfileproperties")) {
-
-        if(reader.tokenType() == QXmlStreamReader::StartElement) {
-            if(reader.name() == "addrootpath") {
-                if (reader.readElementText().contains("true"))
-                {
-                    m_addRootPath = true;
-                } else {
-                    m_addRootPath = false;
-                }
-            }
-        }
-
-        if(reader.tokenType() == QXmlStreamReader::StartElement) {
-            if(reader.name() == "rootpathtyp") {
-                m_rootPathTyp = reader.readElementText();
-            }
-        }
-
-        if(reader.tokenType() == QXmlStreamReader::StartElement) {
-            if(reader.name() == "style") {
-                m_style = reader.readElementText();
-            }
-        }
-
         reader.readNext();
     }
 }
@@ -312,29 +220,5 @@ void XMLConfigIO::writeFilter(int i)
         writer.writeTextElement("f", tempExclude.at(i));
     }
     if (!tempExclude.isEmpty()) writer.writeEndElement();
-    writer.writeEndElement();
-}
-
-
-
-void XMLConfigIO::writeDefaultHash(void)
-{
-    writer.writeTextElement("defaulthash", m_defaultHash);
-}
-
-void XMLConfigIO::writeHashFileProperties()
-{
-    writer.writeStartElement("hashfileproperties");
-
-    if(m_addRootPath)
-    {
-        writer.writeTextElement("addrootpath", "true");
-    } else {
-        writer.writeTextElement("addrootpath", "false");
-    }
-
-    writer.writeTextElement("rootpathtyp", m_rootPathTyp);
-    writer.writeTextElement("style", m_style);
-
     writer.writeEndElement();
 }

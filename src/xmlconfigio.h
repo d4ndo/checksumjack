@@ -41,36 +41,18 @@ public:
     void setExcludeFileFilter(const QMultiMap<QString, QString>&);
     QList<QString>& getKey(void);
     void setKey(const QList<QString>&);
-    QString& getDefaultHash(void);
-    void setDefaultHash(QString&);
-    bool isAddRootPath(void);
-    void AddRootPath(bool);
-    QString& getRootPathTyp(void);
-    void setRootPathTyp(QString&);
-    QString getStyle(void);
-    void setStyle(QString&);
 
 private:
     void readAll(void);
-    void readDefaultHash(void);
-    void readHashFileProperties(void);
     void readInclude(QString name);
     void readExclude(QString name);
-
-    void writeDefaultHash(void);
-    void writeHashFileProperties(void);
     void writeFilter(int);
-
     void init();
 
     QFile mfile;
     QMultiMap<QString, QString> m_includeFileFilter;
     QMultiMap<QString, QString> m_excludeFileFilter;
     QList<QString> m_filter;
-    QString m_defaultHash;
-    bool m_addRootPath;
-    QString m_rootPathTyp;
-    QString m_style;
     QXmlStreamReader reader;
     QXmlStreamWriter writer;
 };
