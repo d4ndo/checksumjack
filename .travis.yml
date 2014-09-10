@@ -5,7 +5,7 @@ before_install:
  - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
  - sudo apt-get update -qq
 install:
-- sudo apt-get install -qq  qt5-qmake qtbase5-dev libqt5script5 libqt5scripttools5 qtdeclarative5-dev libqt5webkit5-dev libsqlite3-dev libqt5quicktest5 libqt5test5 
+- sudo apt-get install -qq qt5-qmake qtbase5-dev libqt5script5 libqt5scripttools5 qtdeclarative5-dev libqt5webkit5-dev libsqlite3-dev libqt5quicktest5 libqt5test5 libqt5gui5 libqt5widgets5 libqt5core5a libqt5test5
 - sudo apt-get install -qq  qt5-default qttools5-dev-tools
 - sudo apt-get install -qq libssl-dev
 script:
