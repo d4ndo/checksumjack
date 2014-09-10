@@ -1,9 +1,14 @@
 language: cpp
+
 compiler:
 - gcc
+
 before_install:
- - sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
- - sudo apt-get update -qq
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sudo add-apt-repository --yes ppa:ubuntu-sdk-team/ppa
+- sudo apt-get update -qq
+
 install:
 - sudo apt-get install -qq qt5-qmake qtbase5-dev libqt5script5 libqt5scripttools5 libqt5test5
 - sudo apt-get install -qq  qt5-default qttools5-dev-tools
@@ -11,5 +16,6 @@ install:
 - qmake ChecksumJack.pro
 - make
 - sudo make install
+
 script:
 - ./build_unittest/tst_unittest
