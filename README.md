@@ -1,6 +1,7 @@
 
 ChecksumJack
 ============
+[![Build Status](https://travis-ci.org/d4ndo/checksumjack.svg?branch=master)](https://travis-ci.org/d4ndo/checksumjack)
 
 ChecksumJack is a software to calculate a files hash digest. It runs on multiple platform and is distributed under the GPL. You are welcome to download it for free.
 
