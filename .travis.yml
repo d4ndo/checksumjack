@@ -8,9 +8,8 @@ install:
 - sudo apt-get install -qq qt5-qmake qtbase5-dev libqt5script5 libqt5scripttools5 libqt5test5
 - sudo apt-get install -qq  qt5-default qttools5-dev-tools
 - sudo apt-get install -qq libssl-dev
-script:
 - qmake ChecksumJack.pro
 - make
-- make check
 - sudo make install
-- cd build_unittest && ./tst_unittest
+script:
+- ./build_unittest/tst_unittest
