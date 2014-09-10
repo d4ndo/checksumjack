@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += widgets script testlib
+QT       += widgets testlib
 
 TARGET = tst_unittest
 DESTDIR = ../build_unittest/
