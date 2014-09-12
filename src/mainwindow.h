@@ -150,7 +150,7 @@ private:
     bool mskip;
     bool mprogress;
     QString m_rootPathTyp;
-    QString m_style;
+    QString m_format;
 
     QMenu *checksumMenu;
     QAction *verifyCheckSum;
