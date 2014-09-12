@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>417</width>
-    <height>290</height>
+    <width>476</width>
+    <height>305</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -96,13 +96,13 @@
            <item>
             <widget class="QGroupBox" name="groupBox_2">
              <property name="title">
-              <string>Style</string>
+              <string>Hash file format</string>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_2">
               <item>
-               <widget class="QRadioButton" name="radioMD5">
+               <widget class="QRadioButton" name="radiodefault">
                 <property name="text">
-                 <string>MD5</string>
+                 <string>default format. (md5sum, sha256sum, etc.)</string>
                 </property>
                 <property name="checked">
                  <bool>true</bool>
@@ -110,12 +110,12 @@
                </widget>
               </item>
               <item>
-               <widget class="QRadioButton" name="radioBSD">
+               <widget class="QRadioButton" name="radiodeep">
                 <property name="enabled">
-                 <bool>false</bool>
+                 <bool>true</bool>
                 </property>
                 <property name="text">
-                 <string>BSD</string>
+                 <string>deep format. (md5deep, sha256deep, etc.)</string>
                 </property>
                 <property name="checkable">
                  <bool>true</bool>

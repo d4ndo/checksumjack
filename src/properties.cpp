@@ -44,14 +44,13 @@ Properties::Properties(Options *opt, QWidget *parent) :
         ui->comboBoxRootPath->setCurrentIndex(1);
     }
 
-    if (options->style().contains("MD5"))
+    if (options->format().contains("default"))
     {
-        ui->radioMD5->setChecked(true);
+        ui->radiodefault->setChecked(true);
     }
-
-    if (options->style().contains("BSD"))
+    if (options->format().contains("deep"))
     {
-        ui->radioBSD->setChecked(true);
+        ui->radiodeep->setChecked(true);
     }
 
     /* hashtyp */
@@ -113,14 +112,14 @@ void Properties::on_radioNo_clicked()
     options->setAddRootPath(false);
 }
 
-void Properties::on_radioMD5_clicked()
+void Properties::on_radiodefault_clicked()
 {
-    options->setStyle("MD5");
+    options->setFormat("default");
 }
 
-void Properties::on_radioBSD_clicked()
+void Properties::on_radiodeep_clicked()
 {
-    options->setStyle("BSD");
+    options->setFormat("deep");
 }
 
 void Properties::on_comboBoxRootPath_activated(int index)
@@ -170,3 +169,5 @@ void Properties::on_comboBoxHashTyp_activated(int index)
         options->setDefaultHash("WHIRLPOOL");
     }
 }
+
+

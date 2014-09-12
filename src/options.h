@@ -18,8 +18,8 @@ public:
     void setDefaultHash(const QString &defaultHash);
     QString rootPathTyp() const;
     void setRootPathTyp(const QString &rootPathTyp);
-    QString style() const;
-    void setStyle(const QString &style);
+    QString format() const;
+    void setFormat(const QString &format);
     void apply();
 
 signals:
@@ -32,7 +32,7 @@ private:
     bool m_addRootPath;
     QString m_defaultHash;
     QString m_rootPathTyp;
-    QString m_style;
+    QString m_format;
 
 };
 

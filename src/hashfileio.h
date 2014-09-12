@@ -29,16 +29,9 @@ protected:
     HashFileIO& operator=(const HashFileIO& hf);
 
 public:
-    HashFileIO()
-        : mfilename("/home/daniel/test.txt"),
-          mInputdata(mfilename),
-          mOutputdata(mfilename),
-          mIn(&mInputdata),
-          mOut(&mOutputdata)
-    {}
-
-    HashFileIO(QString filename)
+    HashFileIO(QString filename, QString format="default")
         : mfilename(filename),
+          mformat(format),
           mInputdata(mfilename),
           mOutputdata(mfilename),
           mIn(&mInputdata),
@@ -57,6 +50,7 @@ public:
 
 private:
     QString mfilename;
+    QString mformat;
     QFile mInputdata;
     QFile mOutputdata;
     QTextStream mIn;
