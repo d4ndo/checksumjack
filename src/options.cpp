@@ -3,14 +3,14 @@
 static const char* ADDROOTPATH_ENABLED = "properties/rootpathtofilename";
 static const char* DEFAULTHASH = "properties/defaulthash";
 static const char* ROOTPATHTYP = "properties/rootpathtyp";
-static const char* STLYE = "properties/style";
+static const char* FORMAT = "properties/format";
 
 Options::Options(QObject *parent) :
     QObject(parent),
     m_addRootPath(true),
     m_defaultHash("SHA256"),
     m_rootPathTyp("dynamic"),
-    m_style("MD5")
+    m_format("default")
 {
 }
 
@@ -23,7 +23,7 @@ void Options::readSettings()
      m_addRootPath = settings.value(ADDROOTPATH_ENABLED, true).toBool();
      m_defaultHash = settings.value(DEFAULTHASH, "SHA256").toString();
      m_rootPathTyp = settings.value(ROOTPATHTYP, "dynamic").toString();
-     m_style = settings.value(STLYE, "MD5").toString();
+     m_format = settings.value(FORMAT, "default").toString();
  }
 
 void Options::writeSettings()
@@ -33,7 +33,7 @@ void Options::writeSettings()
     settings.setValue(ADDROOTPATH_ENABLED, m_addRootPath);
     settings.setValue(DEFAULTHASH, m_defaultHash);
     settings.setValue(ROOTPATHTYP, m_rootPathTyp);
-    settings.setValue(STLYE, m_style);
+    settings.setValue(FORMAT, m_format);
 }
 
 bool Options::addRootPath() const
@@ -66,14 +66,14 @@ void Options::setRootPathTyp(const QString &rootPathTyp)
     m_rootPathTyp = rootPathTyp;
 }
 
-QString Options::style() const
+QString Options::format() const
 {
-    return m_style;
+    return m_format;
 }
 
-void Options::setStyle(const QString &style)
+void Options::setFormat(const QString &format)
 {
-    m_style = style;
+    m_format = format;
 }
 
 void Options::apply()
