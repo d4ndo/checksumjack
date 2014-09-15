@@ -38,14 +38,13 @@ public:
     
 private slots:
     void on_buttonBox_accepted();
-    void on_radioYes_clicked();
-    void on_radioNo_clicked();
-    void on_radiodefault_clicked();
+    void on_checkRootPath_clicked(bool checked);
+    void on_radiognu_clicked();
+    void on_radiobsd_clicked();
+    void on_radiocsv_clicked();
+    void on_checkfullpath_clicked(bool checked);
     void on_comboBoxRootPath_activated(int index);
     void on_comboBoxHashTyp_activated(int index);
-
-
-    void on_radiodeep_clicked();
 
 private:
     Ui::Properties *ui;
