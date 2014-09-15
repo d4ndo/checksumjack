@@ -140,6 +140,7 @@ void MainWindow::initProperties()
     m_hashtyp = options->defaultHash();
     m_rootPathTyp = options->rootPathTyp();
     m_format = options->format();
+    m_fullPath = options->fullPath();
 }
 
 void MainWindow::initFilterSettings()
@@ -346,126 +347,97 @@ void MainWindow::on_actionSave_Hash_File_triggered()
     } else if (m_hashtyp == "WHIRLPOOL") {
         fileEnding = " WhirlPool ( *.whirlpool ) ;; All ( * )";
     }
+    if (m_format == "csv") {
+        fileEnding = " CSV ( *.csv ) ;; All ( * )";
+    }
 
     if (!report.isEmpty())
     {
-        QRegExp patternFile("^([^\\[]*)(\\[*)([^\\]]*)(\\]*)(\\.*)(.*)$");
-        QRegExp patternMD5ending("\\.[Mm][Dd]5$");
-        QRegExp patternSHA1ending("\\.[Ss][Hh][Aa]1$");
-        QRegExp patternRIPEMD160ending("\\.[Rr][Mm][Dd]160$");
-        QRegExp patternSHA2_224ending("\\.[Ss][Hh][Aa]224$");
-        QRegExp patternSHA2_256ending("\\.[Ss][Hh][Aa]256$");
-        QRegExp patternSHA2_384ending("\\.[Ss][Hh][Aa]384$");
-        QRegExp patternSHA2_512ending("\\.[Ss][Hh][Aa]512$");
-        QRegExp patternWHIRLPOOLending("\\.[Ww][Hh][Ii][Rr][Ll][Pp][Oo][Oo][Ll]$");
-        patternFile.setPatternSyntax(QRegExp::RegExp2);
-        patternMD5ending.setPatternSyntax(QRegExp::RegExp2);
-        patternSHA1ending.setPatternSyntax(QRegExp::RegExp2);
-        patternRIPEMD160ending.setPatternSyntax(QRegExp::RegExp2);
-        patternSHA2_224ending.setPatternSyntax(QRegExp::RegExp2);
-        patternSHA2_256ending.setPatternSyntax(QRegExp::RegExp2);
-        patternSHA2_384ending.setPatternSyntax(QRegExp::RegExp2);
-        patternSHA2_512ending.setPatternSyntax(QRegExp::RegExp2);
-        patternWHIRLPOOLending.setPatternSyntax(QRegExp::RegExp2);
+        QString fileName = "/hashfile";
 
-        QString fileN = QFileDialog::getSaveFileName(this, tr("Save File"), QString(report.at(0).filePath()->data()), fileEnding, NULL, QFileDialog::DontConfirmOverwrite);
-        QString fileName;
-
-        patternFile.indexIn(fileN);
-        fileName = patternFile.cap(1);
-
-        if(!fileName.isEmpty())
+        if (options->addRootPath())
         {
-            if (options->addRootPath())
+            QString temp;
+            /* Add root path to file name dynamic */
+            if(m_rootPathTyp.contains("dynamic"))
             {
-                QString temp;
-                /* Add root path to file name dynamic */
-                if(m_rootPathTyp.contains("dynamic"))
-                {
-                    temp = encodeDynamicPath(ui->labelDir->text());
-                    if(temp.contains("none")) { m_rootPathTyp.clear(); m_rootPathTyp.append("static"); } else {
-                        fileName.append(temp);
-                    }
-                }
-                if (m_rootPathTyp.contains("static"))
-                {
-                    temp = encodeStaticPath(ui->labelDir->text());
-                    fileName.append(temp);
+                temp = encodeDynamicPath(ui->labelDir->text());
+                if(temp.contains("none")) { m_rootPathTyp.clear(); m_rootPathTyp.append("static"); } else {
+                   fileName.append(temp);
                 }
             }
-
-            if (m_hashtyp == "MD5")
+            if (m_rootPathTyp.contains("static"))
             {
-                if (fileName.contains(patternMD5ending)) fileName.remove(patternMD5ending);
-                fileName.append(".md5");
-            } else if (m_hashtyp == "SHA-1")  {
-                if (fileName.contains(patternSHA1ending)) fileName.remove(patternSHA1ending);
-                fileName.append(".sha1");
-            } else if (m_hashtyp == "RIPEMD-160")  {
-                if (fileName.contains(patternRIPEMD160ending)) fileName.remove(patternRIPEMD160ending);
-                fileName.append(".rmd160");
-            } else if (m_hashtyp == "SHA224") {
-                if (fileName.contains(patternSHA2_224ending)) fileName.remove(patternSHA2_224ending);
-                fileName.append(".sha224");
-            } else if (m_hashtyp == "SHA256") {
-                if (fileName.contains(patternSHA2_256ending)) fileName.remove(patternSHA2_256ending);
-                fileName.append(".sha256");
-            } else if (m_hashtyp == "SHA384") {
-                if (fileName.contains(patternSHA2_384ending)) fileName.remove(patternSHA2_384ending);
-                fileName.append(".sha384");
-            } else if (m_hashtyp == "SHA512") {
-                if (fileName.contains(patternSHA2_384ending)) fileName.remove(patternSHA2_384ending);
-                fileName.append(".sha512");
-            } else if (m_hashtyp == "WHIRLPOOL") {
-                if (fileName.contains(patternWHIRLPOOLending)) fileName.remove(patternWHIRLPOOLending);
-                fileName.append(".whirlpool");
+                temp = encodeStaticPath(ui->labelDir->text());
+                fileName.append(temp);
+            }
+        }
+
+        if (m_hashtyp == "MD5")
+        {
+            fileName.append(".md5");
+        } else if (m_hashtyp == "SHA-1")  {
+            fileName.append(".sha1");
+        } else if (m_hashtyp == "RIPEMD-160")  {
+            fileName.append(".rmd160");
+        } else if (m_hashtyp == "SHA224") {
+            fileName.append(".sha224");
+        } else if (m_hashtyp == "SHA256") {
+            fileName.append(".sha256");
+        } else if (m_hashtyp == "SHA384") {
+            fileName.append(".sha384");
+        } else if (m_hashtyp == "SHA512") {
+            fileName.append(".sha512");
+        } else if (m_hashtyp == "WHIRLPOOL") {
+            fileName.append(".whirlpool");
+        }
+        if (m_format == "csv") {
+            fileName.append(".csv");
+        }
+
+        QString recommendedFileName = QString(report.at(0).filePath()->data()).append(fileName);
+
+        QString filename = QFileDialog::getSaveFileName(this, tr("Save File"), recommendedFileName, fileEnding, NULL, QFileDialog::DontConfirmOverwrite);
+
+        bool save = true;
+        QFileInfo info(filename);
+        if (info.exists())
+        {
+            int ret = 0;
+            QMessageBox fileexist;
+            fileexist.setText(tr("File allready existing. Override File ?"));
+            fileexist.setStandardButtons(QMessageBox::Cancel | QMessageBox::Yes);
+            fileexist.setButtonText(QMessageBox::Cancel,tr("Cancel"));
+            fileexist.setButtonText(QMessageBox::Yes,tr("Yes"));
+            ret = fileexist.exec();
+            switch(ret)
+            {
+            case QMessageBox::Yes:
+                save = true;
+                break;
+            case QMessageBox::Cancel:
+                save = false;
+                break;
+            default:
+                break;
             }
 
-            bool save = true;
-            QFileInfo info(fileName);
-            if (info.exists())
+        }
+        if (save)
+        {
+            HashFileIO checksumfile(filename);
+            checksumfile.openHashFileWriteing();
+            checksumfile.setformat(m_format);
+            checksumfile.setfullPath(m_fullPath);
+
+            for (int i = 0; i < report.size(); i++)
             {
-                int ret = 0;
-                QMessageBox fileexist;
-                fileexist.setText(tr("File allready existing. Override File ?"));
-                fileexist.setStandardButtons(QMessageBox::Cancel | QMessageBox::Yes);
-                fileexist.setButtonText(QMessageBox::Cancel,tr("Cancel"));
-                fileexist.setButtonText(QMessageBox::Yes,tr("Yes"));
-                ret = fileexist.exec();
-                switch(ret)
+                if (!report.isEmpty())
                 {
-                    case QMessageBox::Yes:
-                        save = true;
-                        break;
-                    case QMessageBox::Cancel:
-                        save = false;
-                        break;
-                    default:
-                    break;
+                    checksumfile.writerToHashFile(report.at(i).statusItem()->text(), ui->labelDir->text(), report.at(i).fileItem()->text(), m_hashtyp);
                 }
-
             }
-            if (save)
-            {
-                HashFileIO checksumfile(fileName, m_format);
-                checksumfile.openHashFileWriteing();
-
-                for (int i = 0; i < report.size(); i++)
-                {
-                    if (!report.isEmpty())
-                    {
-                        if (m_format.contains("default"))
-                        {
-                            checksumfile.writerToHashFile(report.at(i).statusItem()->text(), report.at(i).fileItem()->text());
-                        }
-                        if (m_format.contains("deep")) {
-                            QString path = ui->labelDir->text().append(report.at(i).fileItem()->text());
-                            checksumfile.writerToHashFile(report.at(i).statusItem()->text(), path);
-                        }
-                    }
-                }
-                checksumfile.closeHashFile();
-            }
+            checksumfile.closeHashFile();
         }
     }
 }
@@ -878,12 +850,12 @@ void MainWindow::calculateValid()
                 ReportItem r;
 
                 if (patternBSDFormat.cap(1) == "MD5")  r.sizeItem()->setText("MD5");
-                if (patternBSDFormat.cap(1) == "SHA-1" || patternBSDFormat.cap(1) == "SHA1") r.sizeItem()->setText("SHA-1");
+                if (patternBSDFormat.cap(1) == "SHA1" || patternBSDFormat.cap(1) == "SHA-1") r.sizeItem()->setText("SHA-1");
                 if (patternBSDFormat.cap(1) == "RIPEMD-160" || patternBSDFormat.cap(1) == "RMD160") r.sizeItem()->setText("RIPEMD-160");
-                if (patternBSDFormat.cap(1) == "SHA224") r.sizeItem()->setText("SHA224");
-                if (patternBSDFormat.cap(1) == "SHA256") r.sizeItem()->setText("SHA256");
-                if (patternBSDFormat.cap(1) == "SHA384") r.sizeItem()->setText("SHA384");
-                if (patternBSDFormat.cap(1) == "SHA512") r.sizeItem()->setText("SHA512");
+                if (patternBSDFormat.cap(1) == "SHA224" || patternBSDFormat.cap(1) == "SHA-224") r.sizeItem()->setText("SHA224");
+                if (patternBSDFormat.cap(1) == "SHA256" || patternBSDFormat.cap(1) == "SHA-256") r.sizeItem()->setText("SHA256");
+                if (patternBSDFormat.cap(1) == "SHA384" || patternBSDFormat.cap(1) == "SHA-384") r.sizeItem()->setText("SHA384");
+                if (patternBSDFormat.cap(1) == "SHA512" || patternBSDFormat.cap(1) == "SHA-512") r.sizeItem()->setText("SHA512");
                 if (patternBSDFormat.cap(1) == "WHIRLPOOL") r.sizeItem()->setText("WHIRLPOOL");
 
                 mhashes.append(patternBSDFormat.cap(6));
@@ -1648,6 +1620,9 @@ void MainWindow::on_actionClear_All_triggered()
     printReport();
 }
 
+/*
+ * Tab triggered |checksum|verify|
+ */
 void MainWindow::on_tabWidget_currentChanged(int index)
 {
     if (index == 0)
@@ -1804,6 +1779,9 @@ void MainWindow::open2Selected_triggered()
     }
 }
 
+/*
+ * Drop Event
+ */
 void MainWindow::dropEvent(QDropEvent *de)
 {
     QStringList mylist;
@@ -1849,19 +1827,27 @@ void MainWindow::dropEvent(QDropEvent *de)
     this->drag_checksumfiles(mylist);
 }
 
+/*
+ * drag move event
+ */
 void MainWindow::dragMoveEvent(QDragMoveEvent *de)
 {
     /* The event needs to be accepted here */
     de->accept();
 }
 
+/*
+ * drag enter event
+ */
 void MainWindow::dragEnterEvent(QDragEnterEvent *event)
 {
     /* Set the drop action to be the proposed action. */
     event->acceptProposedAction();
 }
 
-
+/*
+ * drag hash file event
+ */
 void MainWindow::drag_checksumfiles(QStringList &files)
 {
     QFileInfo info(files.first());
@@ -1895,6 +1881,7 @@ void MainWindow::drag_checksumfiles(QStringList &files)
 }
 
 /*
+ * @ Tab |Verify|
  * Radiobutton 1
  * Dont use any root path at all
  */
@@ -1905,6 +1892,7 @@ void MainWindow::on_radioNoRootPath_clicked()
 }
 
 /*
+ * @ Tab |Verify|
  * Radiobutton 2
  * Use same rootpath as hash file's current path
  */
@@ -1915,6 +1903,7 @@ void MainWindow::on_radioDynamic_clicked()
 }
 
 /*
+ * @ Tab |Verify|
  * Radiobutton 3
  * Use file name tag [xyz] as root path
  */
@@ -1925,6 +1914,7 @@ void MainWindow::on_radioByTag_clicked()
 }
 
 /*
+ * @ Tab |Verify|
  * Radiobutton 4
  * Use user definded root path
  */
@@ -1939,6 +1929,8 @@ void MainWindow::on_radioStatic_clicked(bool checked)
 }
 
 /*
+ * @ Tab |Verify|
+ * Choose a root path
  * User starts QFileDialog to choose root path (simple PushButton)
  */
 void MainWindow::on_toolButton_clicked()

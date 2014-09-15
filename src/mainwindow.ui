@@ -1136,7 +1136,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>MD5</string>
+    <string>MD5 (not recommended)</string>
    </property>
   </action>
   <action name="actionSHA_1">
@@ -1147,7 +1147,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>SHA-1</string>
+    <string>SHA-1 (not recommended)</string>
    </property>
   </action>
   <action name="actionOpen_Hash_File">
@@ -1242,7 +1242,7 @@
     <bool>false</bool>
    </property>
    <property name="text">
-    <string>SHA-2 family (recommended)</string>
+    <string>SHA-2 family</string>
    </property>
   </action>
   <action name="actionSHA_2_256">
@@ -1277,7 +1277,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>WhirlPool (recommended)</string>
+    <string>WhirlPool</string>
    </property>
   </action>
   <action name="actionRIPEMD_160">
@@ -1285,7 +1285,7 @@
     <bool>true</bool>
    </property>
    <property name="text">
-    <string>RIPEMD-160 (fast)</string>
+    <string>RIPEMD-160</string>
    </property>
   </action>
   <action name="actionProperties">
