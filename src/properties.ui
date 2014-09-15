@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>476</width>
-    <height>305</height>
+    <width>511</width>
+    <height>332</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,101 +31,125 @@
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_5">
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_4">
-           <item>
-            <widget class="QGroupBox" name="groupBox">
-             <property name="title">
-              <string>Write RootPath to Filename ?</string>
-             </property>
-             <layout class="QVBoxLayout" name="verticalLayout_3">
+          <widget class="QGroupBox" name="groupBox">
+           <property name="title">
+            <string>Save Hash Filename:</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <layout class="QVBoxLayout" name="verticalLayout">
               <item>
-               <layout class="QVBoxLayout" name="verticalLayout">
+               <layout class="QHBoxLayout" name="horizontalLayout">
                 <item>
-                 <layout class="QHBoxLayout" name="horizontalLayout">
-                  <item>
-                   <widget class="QRadioButton" name="radioYes">
-                    <property name="text">
-                     <string>Yes</string>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer name="horizontalSpacer">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                  <item>
-                   <widget class="QComboBox" name="comboBoxRootPath">
-                    <item>
-                     <property name="text">
-                      <string>Dynamic Path</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>Static Path</string>
-                     </property>
-                    </item>
-                   </widget>
-                  </item>
-                 </layout>
+                 <widget class="QCheckBox" name="checkRootPath">
+                  <property name="text">
+                   <string>Set root path to filename</string>
+                  </property>
+                  <property name="checkable">
+                   <bool>true</bool>
+                  </property>
+                  <property name="checked">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
                 </item>
                 <item>
-                 <widget class="QRadioButton" name="radioNo">
-                  <property name="text">
-                   <string>No</string>
+                 <spacer name="horizontalSpacer">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
                   </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="comboBoxRootPath">
+                  <property name="editable">
+                   <bool>true</bool>
+                  </property>
+                  <item>
+                   <property name="text">
+                    <string>Dynamic Path</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Static Path</string>
+                   </property>
+                  </item>
                  </widget>
                 </item>
                </layout>
               </item>
              </layout>
-            </widget>
-           </item>
-           <item>
-            <widget class="QGroupBox" name="groupBox_2">
-             <property name="title">
-              <string>Hash file format</string>
-             </property>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_2">
+           <property name="title">
+            <string>Hash file format</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
              <layout class="QVBoxLayout" name="verticalLayout_2">
               <item>
-               <widget class="QRadioButton" name="radiodefault">
+               <layout class="QHBoxLayout" name="horizontalLayout_3">
+                <item>
+                 <widget class="QRadioButton" name="radiognu">
+                  <property name="text">
+                   <string>GNU format. (e.G. GNU sha256sum)</string>
+                  </property>
+                  <property name="checked">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="horizontalSpacer_3">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+                <item>
+                 <widget class="QCheckBox" name="checkfullpath">
+                  <property name="text">
+                   <string>add full path</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QRadioButton" name="radiobsd">
                 <property name="text">
-                 <string>default format. (md5sum, sha256sum, etc.)</string>
-                </property>
-                <property name="checked">
-                 <bool>true</bool>
+                 <string>BSD format. (e.G. BSD sha256sum)</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QRadioButton" name="radiodeep">
-                <property name="enabled">
-                 <bool>true</bool>
-                </property>
+               <widget class="QRadioButton" name="radiocsv">
                 <property name="text">
-                 <string>deep format. (md5deep, sha256deep, etc.)</string>
-                </property>
-                <property name="checkable">
-                 <bool>true</bool>
+                 <string>CSV format (comma separated)</string>
                 </property>
                </widget>
               </item>
              </layout>
-            </widget>
-           </item>
-          </layout>
+            </item>
+           </layout>
+          </widget>
          </item>
          <item>
           <spacer name="verticalSpacer">
@@ -135,7 +159,7 @@
            <property name="sizeHint" stdset="0">
             <size>
              <width>17</width>
-             <height>13</height>
+             <height>118</height>
             </size>
            </property>
           </spacer>

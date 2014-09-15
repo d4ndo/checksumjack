@@ -151,6 +151,7 @@ private:
     bool mprogress;
     QString m_rootPathTyp;
     QString m_format;
+    bool m_fullPath;
 
     QMenu *checksumMenu;
     QAction *verifyCheckSum;

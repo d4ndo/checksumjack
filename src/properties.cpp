@@ -28,12 +28,7 @@ Properties::Properties(Options *opt, QWidget *parent) :
     ui->setupUi(this);
     options->readSettings();
 
-    if (options->addRootPath())
-    {
-        ui->radioYes->setChecked(true);
-    } else  {
-        ui->radioNo->setChecked(true);
-    }
+    ui->checkRootPath->setChecked(options->addRootPath());
 
     if (options->rootPathTyp().contains("dynamic"))
     {
@@ -43,14 +38,23 @@ Properties::Properties(Options *opt, QWidget *parent) :
     {
         ui->comboBoxRootPath->setCurrentIndex(1);
     }
+    ui->comboBoxRootPath->setDisabled(!options->addRootPath());
 
-    if (options->format().contains("default"))
+    if (options->format().contains("gnu"))
     {
-        ui->radiodefault->setChecked(true);
+        ui->radiognu->setChecked(true);
     }
-    if (options->format().contains("deep"))
+    if (options->format().contains("bsd"))
     {
-        ui->radiodeep->setChecked(true);
+        ui->radiobsd->setChecked(true);
+    }
+    if (options->format().contains("csv"))
+    {
+        ui->radiocsv->setChecked("csv");
+    }
+    if (options->fullPath() == true)
+    {
+        ui->checkfullpath->setChecked(true);
     }
 
     /* hashtyp */
@@ -100,38 +104,42 @@ void Properties::on_buttonBox_accepted()
     options->apply();
 }
 
-void Properties::on_radioYes_clicked()
+void Properties::on_checkRootPath_clicked(bool checked)
 {
-    ui->comboBoxRootPath->setDisabled(false);
-    options->setAddRootPath(true);
+    ui->comboBoxRootPath->setDisabled(!checked);
+    options->setAddRootPath(checked);
 }
 
-void Properties::on_radioNo_clicked()
+void Properties::on_radiognu_clicked()
 {
-    ui->comboBoxRootPath->setDisabled(true);
-    options->setAddRootPath(false);
+    options->setFormat("gnu");
 }
 
-void Properties::on_radiodefault_clicked()
+void Properties::on_radiobsd_clicked()
 {
-    options->setFormat("default");
+    options->setFormat("bsd");
 }
 
-void Properties::on_radiodeep_clicked()
+void Properties::on_radiocsv_clicked()
 {
-    options->setFormat("deep");
+    options->setFormat("csv");
+}
+
+void Properties::on_checkfullpath_clicked(bool checked)
+{
+    options->setFullPath(checked);
 }
 
 void Properties::on_comboBoxRootPath_activated(int index)
 {
     if (index == 0)
     {
-        options->setAddRootPath("dynamic");
+        options->setRootPathTyp("dynamic");
     }
     if (index == 1)
     {
-        options->setAddRootPath("static");
-    }
+        options->setRootPathTyp("static");
+    }    
 }
 
 void Properties::on_comboBoxHashTyp_activated(int index)
@@ -169,5 +177,9 @@ void Properties::on_comboBoxHashTyp_activated(int index)
         options->setDefaultHash("WHIRLPOOL");
     }
 }
+
+
+
+
 
 

@@ -57,9 +57,27 @@ void HashFileIO::closeHashFile(void)
     mOutputdata.close();
 }
 
-void HashFileIO::writerToHashFile(const QString& hashStr, const  QString& fileName)
+void HashFileIO::writerToHashFile(const QString &hashStr, const QString &rootpath, const QString &fileName, const QString &hashtyp)
 {
-    mOut << hashStr << " " << fileName << endl;
+    QString filepath;
+
+    if (mfullPath == true)
+    {
+        filepath.append(rootpath);
+        filepath.append(fileName);
+    } else {
+        filepath.append(fileName);
+    }
+
+    if (mformat.contains("gnu")) {
+        mOut << hashStr << " " << filepath << endl;
+    }
+    if (mformat.contains("bsd")) {
+        mOut << hashtyp << " (" << filepath << ")" << " = " << hashStr << endl;
+    }
+    if (mformat.contains("csv")) {
+        mOut << hashStr << "," << filepath << endl;
+    }
 }
 
 QString HashFileIO::readFromHashFile(void)
@@ -74,3 +92,24 @@ QString HashFileIO::readFromHashFile(void)
         return line;
     }
 }
+QString HashFileIO::getformat() const
+{
+    return mformat;
+}
+
+void HashFileIO::setformat(const QString &value)
+{
+    mformat = value;
+}
+
+bool HashFileIO::getfullPath() const
+{
+    return mfullPath;
+}
+
+void HashFileIO::setfullPath(bool value)
+{
+    mfullPath = value;
+}
+
+

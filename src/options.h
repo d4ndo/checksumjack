@@ -20,6 +20,8 @@ public:
     void setRootPathTyp(const QString &rootPathTyp);
     QString format() const;
     void setFormat(const QString &format);
+    bool fullPath() const;
+    void setFullPath(bool fullPath);
     void apply();
 
 signals:
@@ -33,6 +35,7 @@ private:
     QString m_defaultHash;
     QString m_rootPathTyp;
     QString m_format;
+    bool m_fullPath;
 
 };
 
