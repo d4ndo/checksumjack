@@ -35,7 +35,8 @@ SOURCES += main.cpp \
     hashfileio.cpp \
     rootpath.cpp \
     properties.cpp \
-    options.cpp
+    options.cpp \
+    detector.cpp
 HEADERS += \
     about.h \
     filtersettings.h \
@@ -49,7 +50,8 @@ HEADERS += \
     hashfileio.h \
     rootpath.h \
     properties.h \
-    options.h
+    options.h \
+    detector.h
 FORMS += mainwindow.ui \
     about.ui \
     filtersettings.ui \
