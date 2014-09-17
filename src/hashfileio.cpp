@@ -57,41 +57,78 @@ void HashFileIO::closeHashFile(void)
     mOutputdata.close();
 }
 
-void HashFileIO::writerToHashFile(const QString &hashStr, const QString &rootpath, const QString &fileName, const QString &hashtyp)
+void HashFileIO::writerToHashFile(const struct hashSet& hashset)
 {
     QString filepath;
 
     if (mfullPath == true)
     {
-        filepath.append(rootpath);
-        filepath.append(fileName);
+        filepath.append(hashset.rootpath);
+        filepath.append(hashset.file);
     } else {
-        filepath.append(fileName);
+        filepath.append(hashset.file);
     }
 
     if (mformat.contains("gnu")) {
-        mOut << hashStr << " " << filepath << endl;
+        mOut << hashset.hash << " " << filepath << endl;
     }
     if (mformat.contains("bsd")) {
-        mOut << hashtyp << " (" << filepath << ")" << " = " << hashStr << endl;
+        mOut << hashset.hashtyp << " (" << filepath << ")" << " = " << hashset.hash << endl;
     }
     if (mformat.contains("csv")) {
-        mOut << hashStr << "," << filepath << endl;
+        mOut << hashset.hash << "," << filepath << endl;
     }
 }
 
-QString HashFileIO::readFromHashFile(void)
+struct hashSet HashFileIO::readFromHashFile(void)
 {
+    struct hashSet hashset;
     QString line;
+
+    QRegExp patternMD5Format("^([^\\s]{32,128})(\\s+)(\\*{0,1})(.*)$");
+    QRegExp patternBSDFormat("^([^\\s]*)(\\s*\\()([^\\)]*)(\\)\\s*)(=\\s*)(.{32,128})$");
+    patternMD5Format.setPatternSyntax(QRegExp::RegExp2);
+    patternBSDFormat.setPatternSyntax(QRegExp::RegExp2);
+    QRegExp patternComment("^\\s*[;|//].*$");
+    QRegExp patternEmpty("^\\s*$");
 
     if (mIn.atEnd())
     {
-        return "EOF";
+        hashset.hash = "none";
+        return hashset;
     } else {
         line = mIn.readLine();
-        return line;
+
+        if (patternComment.indexIn(line) != 0 && patternEmpty.indexIn(line) != 0)
+        {
+            if (patternBSDFormat.indexIn(line) == 0)
+            {
+                /* BSD Format detected */
+                /* capture hashtyp */
+                if (patternBSDFormat.cap(1) == "MD5")  hashset.hashtyp = "MD5";
+                if (patternBSDFormat.cap(1) == "SHA1" || patternBSDFormat.cap(1) == "SHA-1") hashset.hashtyp = "SHA-1";
+                if (patternBSDFormat.cap(1) == "RIPEMD-160" || patternBSDFormat.cap(1) == "RMD160") hashset.hashtyp = "RIPEMD-160";
+                if (patternBSDFormat.cap(1) == "SHA224" || patternBSDFormat.cap(1) == "SHA-224") hashset.hashtyp = "SHA224";
+                if (patternBSDFormat.cap(1) == "SHA256" || patternBSDFormat.cap(1) == "SHA-256") hashset.hashtyp = "SHA256";
+                if (patternBSDFormat.cap(1) == "SHA384" || patternBSDFormat.cap(1) == "SHA-384") hashset.hashtyp = "SHA384";
+                if (patternBSDFormat.cap(1) == "SHA512" || patternBSDFormat.cap(1) == "SHA-512") hashset.hashtyp = "SHA512";
+                if (patternBSDFormat.cap(1) == "WHIRLPOOL") hashset.hashtyp = "WHIRLPOOL";
+
+                /* hash, file */
+                hashset.hash = patternBSDFormat.cap(6);
+                hashset.file = QDir::fromNativeSeparators(patternBSDFormat.cap(3).trimmed());
+
+            } else if (patternMD5Format.indexIn(line) == 0) {
+                /* MD5 format detected */
+                hashset.hash = patternMD5Format.cap(1);
+                hashset.hashtyp = "none";
+                hashset.file = QDir::fromNativeSeparators(patternMD5Format.cap(4).trimmed());
+            }
+        }
+        return hashset;
     }
 }
+
 QString HashFileIO::getformat() const
 {
     return mformat;

@@ -432,9 +432,15 @@ void MainWindow::on_actionSave_Hash_File_triggered()
 
             for (int i = 0; i < report.size(); i++)
             {
-                if (!report.isEmpty())
+                if (!report.isEmpty())                    
                 {
-                    checksumfile.writerToHashFile(report.at(i).statusItem()->text(), ui->labelDir->text(), report.at(i).fileItem()->text(), m_hashtyp);
+                    struct hashSet hashset;
+                    hashset.hash = report.at(i).statusItem()->text();
+                    hashset.hashtyp = m_hashtyp;
+                    hashset.rootpath = ui->labelDir->text();
+                    hashset.file = report.at(i).fileItem()->text();
+
+                    checksumfile.writerToHashFile(hashset);
                 }
             }
             checksumfile.closeHashFile();
@@ -763,6 +769,7 @@ void MainWindow::calculateValid()
     report2.clear();
     mhashes.clear();
     printReport();
+
     QRegExp patternMD5ending("[Mm][Dd]5$");    
     QRegExp patternSHA1ending("[Ss][Hh][Aa]1$");
     QRegExp patternRIPEMD160ending("[Rr][Mm][Dd]160$");
@@ -771,12 +778,7 @@ void MainWindow::calculateValid()
     QRegExp patternSHA2_384ending("[Ss][Hh][Aa]384$");
     QRegExp patternSHA2_512ending("[Ss][Hh][Aa]512$");
     QRegExp patternWHIRLPOOLending("[Ww][Hh][Ii][Rr][Ll][Pp][Oo][Oo][Ll]$");
-    QRegExp patternComment("^\\s*[;|//].*$");
-    QRegExp patternEmpty("^\\s*$");
-    QRegExp patternMD5Format("^([^\\s]{32,128})(\\s+)(\\*{0,1})(.*)$");
-    QRegExp patternBSDFormat("^([^\\s]*)(\\s*\\()([^\\)]*)(\\)\\s*)(=\\s*)(.{32,128})$");
-    patternMD5Format.setPatternSyntax(QRegExp::RegExp2);
-    patternBSDFormat.setPatternSyntax(QRegExp::RegExp2);
+
     patternMD5ending.setPatternSyntax(QRegExp::RegExp2);
     patternSHA1ending.setPatternSyntax(QRegExp::RegExp2);
     patternRIPEMD160ending.setPatternSyntax(QRegExp::RegExp2);
@@ -785,8 +787,7 @@ void MainWindow::calculateValid()
     patternSHA2_384ending.setPatternSyntax(QRegExp::RegExp2);
     patternSHA2_512ending.setPatternSyntax(QRegExp::RegExp2);
     patternWHIRLPOOLending.setPatternSyntax(QRegExp::RegExp2);
-    patternComment.setPatternSyntax(QRegExp::RegExp2);
-    patternEmpty.setPatternSyntax(QRegExp::RegExp2);
+
     QString ending = "";
     quint64 matches = 0;
     quint64 missmatches = 0;
@@ -838,42 +839,25 @@ void MainWindow::calculateValid()
 
     HashFileIO hashFile(mchecksumfiles.at(0));
     hashFile.openHashFileReading();
-    QString line = hashFile.readFromHashFile();
+    struct hashSet hs;
+    hs = hashFile.readFromHashFile();
 
-    while (line != "EOF")
+    while (hs.hash != "none")
     {
-        if (patternComment.indexIn(line) != 0 && patternEmpty.indexIn(line) != 0)
+        ReportItem r;
+
+        if (hs.hashtyp != "none")
         {
-            if (patternBSDFormat.indexIn(line) == 0)
-            {
-                /* BSD Format detected */
-                ReportItem r;
-
-                if (patternBSDFormat.cap(1) == "MD5")  r.sizeItem()->setText("MD5");
-                if (patternBSDFormat.cap(1) == "SHA1" || patternBSDFormat.cap(1) == "SHA-1") r.sizeItem()->setText("SHA-1");
-                if (patternBSDFormat.cap(1) == "RIPEMD-160" || patternBSDFormat.cap(1) == "RMD160") r.sizeItem()->setText("RIPEMD-160");
-                if (patternBSDFormat.cap(1) == "SHA224" || patternBSDFormat.cap(1) == "SHA-224") r.sizeItem()->setText("SHA224");
-                if (patternBSDFormat.cap(1) == "SHA256" || patternBSDFormat.cap(1) == "SHA-256") r.sizeItem()->setText("SHA256");
-                if (patternBSDFormat.cap(1) == "SHA384" || patternBSDFormat.cap(1) == "SHA-384") r.sizeItem()->setText("SHA384");
-                if (patternBSDFormat.cap(1) == "SHA512" || patternBSDFormat.cap(1) == "SHA-512") r.sizeItem()->setText("SHA512");
-                if (patternBSDFormat.cap(1) == "WHIRLPOOL") r.sizeItem()->setText("WHIRLPOOL");
-
-                mhashes.append(patternBSDFormat.cap(6));
-                r.fileItem()->setText(QDir::fromNativeSeparators(patternBSDFormat.cap(3).trimmed()));
-                r.filePath()->append(mdir2.absolutePath());
-                report2.append(r);
-
-            } else if (patternMD5Format.indexIn(line) == 0){
-                /* MD5 format detected */
-                mhashes.append(patternMD5Format.cap(1));
-                ReportItem r;
-                r.fileItem()->setText(QDir::fromNativeSeparators(patternMD5Format.cap(4).trimmed()));
-                r.filePath()->append(mdir2.absolutePath());
-                r.sizeItem()->setText(ending);
-                report2.append(r);
-            }
+            r.sizeItem()->setText(hs.hashtyp);
+        } else {
+            r.sizeItem()->setText(ending);
         }
-        line = hashFile.readFromHashFile();
+        mhashes.append(hs.hash);
+        r.fileItem()->setText(hs.file);
+        r.filePath()->append(mdir2.absolutePath());
+        report2.append(r);
+
+        hs = hashFile.readFromHashFile();
     }
     hashFile.closeHashFile();
 
@@ -979,7 +963,6 @@ void MainWindow::calculateValid()
                 {
                     WHIRLPOOL_Update(&ctxWHIRLPOOL, line, (size_t)line.size());
                 }
-
 
                 c += line.size();
                 progressbar->setValue((c * 100 / pf.getFileSize()));

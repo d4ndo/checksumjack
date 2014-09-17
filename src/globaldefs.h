@@ -44,4 +44,12 @@
 #define COLOUR  (255)
 #define UNUSED(x) (void)(x)
 
+struct hashSet
+{
+    QString hash;
+    QString hashtyp;
+    QString rootpath;
+    QString file;
+};
+
 #endif // GLOBALDEFS_H
