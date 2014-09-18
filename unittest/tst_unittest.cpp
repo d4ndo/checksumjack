@@ -8,7 +8,6 @@
 #include <QDebug>
 #include <QDir>
 
-
 class unitTest : public QObject
 {
     Q_OBJECT
@@ -27,6 +26,8 @@ private Q_SLOTS:
     void testDetectorHashTyp_data();
     void testDetectorFileName();
     void testDetectorFileName_data();
+    void testDetectorComment();
+    void testDetectorComment_data();
 };
 
 unitTest::unitTest()
@@ -151,15 +152,14 @@ void unitTest::testDetectorHashDigest_data()
     QTest::addColumn<QString>("output");
 
     QTest::newRow("bsd hash digest normal") << "MD5 (datei.txt) = 9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a" << "9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a";
-    QTest::newRow("bsd hash digest tab1") << "md5    (datei.txt) = 9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a" << "9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a";
-    QTest::newRow("bsd hash digest tab2") << "SHA1 (datei.txt)  = 9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a" << "9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a";
-    QTest::newRow("bsd hash digest tab3") << "RIPEMD160 (datei.txt) =   9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a" << "9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a";
     QTest::newRow("bsd hash digest whitespace 0") << "SHA1 ( datei.txt) = 9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a" << "9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a";
     QTest::newRow("bsd hash digest whitespace 1") << "RIPEMD-160       (datei.txt) = 9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a" << "9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a";
     QTest::newRow("bsd hash digest whitespace 2") << "SHA224 (datei.txt)     = 9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a" << "9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a";
     QTest::newRow("bsd hash digest whitespace 3") << "SHA-224 (datei.txt) =        9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a" << "9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a";
-    QTest::newRow("bsd hash no valid hash") << "SHA256 (datei.txt) = 69a" << "none";
-    QTest::newRow("gnu hash digest") << "9e3d74e349767bbd1a87c19e082efe3a378e1bc2273b333ee8b1cc00254557fa filename" << "";
+    QTest::newRow("bsd hash none valid hash") << "SHA256 (datei.txt) = 69a" << "none";
+    QTest::newRow("gnu hash digest normal") << "9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a filename" << "9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a";
+    //QTest::newRow("gnu hash digest whitespace") << "   9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a filename" << "9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a9a";
+    QTest::newRow("gnu hash none valid hash") << "69a filename" << "none";
 }
 
 void unitTest::testDetectorHashDigest()
@@ -230,6 +230,27 @@ void unitTest::testDetectorFileName()
     QCOMPARE(detectFilename(input), output);
 }
 
+void unitTest::testDetectorComment_data()
+{
+    QTest::addColumn<QString>("input");
+    QTest::addColumn<bool>("output");
+
+    QTest::newRow("hashfile comment 1") << "# Comment" << true;
+    QTest::newRow("hashfile comment 2") << "; Comment" << true;
+    QTest::newRow("hashfile comment 3") << "// Comment" << true;
+    QTest::newRow("hashfile empty 1") << "" << true;
+    QTest::newRow("hashfile empty 2") << " " << true;
+    QTest::newRow("hashfile empty 3") << "  " << true;
+    QTest::newRow("hashfile non empty") << "abc" << false;
+}
+
+void unitTest::testDetectorComment()
+{
+    QFETCH(QString, input);
+    QFETCH(bool, output);
+
+    QCOMPARE(detectCommentOrEmpty(input), output);
+}
 
 QTEST_MAIN(unitTest)
 
