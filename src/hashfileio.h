@@ -23,6 +23,7 @@
 #include <QDir>
 #include <QTextStream>
 #include "globaldefs.h"
+#include "detector.h"
 
 class HashFileIO
 {
