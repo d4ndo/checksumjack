@@ -6,9 +6,9 @@
 /* Detect hash digest from hashfile hashset */
 QString detectHASHDigest(const QString &input)
 {
-    QRegExp patternMD5Format("^([^\\s]{32,128})(\\s+)(\\*{0,1})(.*)$");
+    QRegExp patternGNUFormat("^([^\\s]{32,128})(\\s+)(\\*{0,1})(.*)$");
     QRegExp patternBSDFormat("^([^\\s]*)(\\s*\\()([^\\)]*)(\\)\\s*)(=\\s*)(.{32,128})$");
-    patternMD5Format.setPatternSyntax(QRegExp::RegExp2);
+    patternGNUFormat.setPatternSyntax(QRegExp::RegExp2);
     patternBSDFormat.setPatternSyntax(QRegExp::RegExp2);
 
     if (patternBSDFormat.indexIn(input) == 0)
@@ -16,9 +16,9 @@ QString detectHASHDigest(const QString &input)
         /* BSD Format detected */
         /* capture hash */
         return patternBSDFormat.cap(6);
-    } else if (patternMD5Format.indexIn(input) == 0) {
+    } else if (patternGNUFormat.indexIn(input) == 0) {
         /* GNU Format detected */
-        return patternBSDFormat.cap(6);
+        return patternGNUFormat.cap(1);
     }
     return "none";
 }
@@ -56,9 +56,9 @@ QString detectHashTyp(const QString &input)
 /* Detect filename form hashfile hash set */
 QString detectFilename(const QString &input)
 {
-    QRegExp patternMD5Format("^([^\\s]{32,128})(\\s+)(\\*{0,1})(.*)$");
+    QRegExp patternGNUFormat("^([^\\s]{32,128})(\\s+)(\\*{0,1})(.*)$");
     QRegExp patternBSDFormat("^([^\\s]*)(\\s*\\()([^\\)]*)(\\)\\s*)(=\\s*)(.{32,128})$");
-    patternMD5Format.setPatternSyntax(QRegExp::RegExp2);
+    patternGNUFormat.setPatternSyntax(QRegExp::RegExp2);
     patternBSDFormat.setPatternSyntax(QRegExp::RegExp2);
 
     if (patternBSDFormat.indexIn(input) == 0)
@@ -66,19 +66,19 @@ QString detectFilename(const QString &input)
         /* BSD Format detected */
         /* capture filename */
         return QDir::fromNativeSeparators(patternBSDFormat.cap(3).trimmed());
-    } else if (patternMD5Format.indexIn(input) == 0) {
+    } else if (patternGNUFormat.indexIn(input) == 0) {
         /* GNU Format detected */
-        return QDir::fromNativeSeparators(patternMD5Format.cap(4).trimmed());
+        return QDir::fromNativeSeparators(patternGNUFormat.cap(4).trimmed());
     }
     return "none";
 }
 
 bool detectCommentOrEmpty(const QString &input)
 {
-    QRegExp patternComment("^\\s*[;|//].*$");
+    QRegExp patternComment("^\\s*[#|;|//].*$");
     QRegExp patternEmpty("^\\s*$");
 
-    if (patternComment.indexIn(input) != 0 && patternEmpty.indexIn(input) != 0) {
+    if (patternComment.indexIn(input) == 0 || patternEmpty.indexIn(input) == 0) {
         return true;
     }
     return false;
