@@ -63,6 +63,7 @@ void MainWindow::init()
 
     checksumMenu2 = new QMenu(this);
     open2Selected = new QAction(this);
+    m_noComboIndexChanged = false;
 
     connect(options, SIGNAL(initProperties()), this, SLOT(initProperties()));
     connect(options, SIGNAL(init_hashtyp()), this, SLOT(init_hashtyp()));
@@ -300,9 +301,9 @@ void MainWindow::on_actionOpen_Hash_File_triggered()
 
     if (m_arg.isEmpty())
     {
-        QString checksumFilter = "Checksum ( *.sha1 *.md5 *.sha224 *.sha256 *.sha384 *.sha512 *.whirlpool )"
+        QString checksumFilter = "Checksum ( *.sha1 *.md5 *.sha224 *.sha256 *.sha384 *.sha512 *.whirlpool *.txt *.csv)"
                                  ";; All ( * ) ;; SHA-1 ( *.sha1 ) ;; RIPEMD-160 ( *.ripemd160 ) ;; SHA224 ( *.sha224) ;; SHA256 ( *.sha256)"
-                                 ";; SHA384 ( *.sha384 ) ;; SHA512 ( *.sha512 ) ;; MD5 ( *.md5 ) ;; WhirlPool ( *.whirlpool )";
+                                 ";; SHA384 ( *.sha384 ) ;; SHA512 ( *.sha512 ) ;; MD5 ( *.md5 ) ;; WhirlPool ( *.whirlpool ) ;; TXT ( *.txt) ;; CSV ( *.csv)";
         mchecksumfiles = QFileDialog::getOpenFileNames(this, tr("Select a checksum file"),
                                                       QDir::homePath(),
                                                        checksumFilter);
@@ -459,16 +460,19 @@ void MainWindow::on_actionAbout_triggered()
 
 void MainWindow::comboIndexChanged(QString index)
 {
-    UNUSED(index);
-    ui->labelProgress->setMovie(m_movie);
-    pre();
-    m_movie->start();
-    sortreport();
-    printReport();
-    m_movie->stop();
-    post();
-    mStop = false;
-    ui->labelProgress->setText(" ");
+    if (!m_noComboIndexChanged)
+    {
+        UNUSED(index);
+        ui->labelProgress->setMovie(m_movie);
+        pre();
+        m_movie->start();
+        sortreport();
+        printReport();
+        m_movie->stop();
+        post();
+        mStop = false;
+        ui->labelProgress->setText(" ");
+    }
 }
 
 void MainWindow::checkBoxtoggle(bool checked)
@@ -849,8 +853,10 @@ void MainWindow::calculateValid()
         if (hs.hashtyp != "none")
         {
             r.sizeItem()->setText(hs.hashtyp);
-        } else {
+        } else if (!ending.isEmpty()) {
             r.sizeItem()->setText(ending);
+        } else {
+            r.sizeItem()->setText(m_hashtyp);
         }
         mhashes.append(hs.hash);
         r.fileItem()->setText(hs.file);
@@ -1203,14 +1209,14 @@ void MainWindow::reInialise_ComboBox(void)
  */
 void MainWindow::init_hashtyp()
 {
-    if (m_hashtyp == "MD5") ui->actionMD5->activate(QAction::Trigger);
-    if (m_hashtyp == "SHA-1") ui->actionSHA_1->activate(QAction::Trigger);
-    if (m_hashtyp == "RIPEMD-160") ui->actionRIPEMD_160->activate(QAction::Trigger);
-    if (m_hashtyp == "SHA224") ui->actionSHA_2_224->activate(QAction::Trigger);
-    if (m_hashtyp == "SHA256") ui->actionSHA_2_256->activate(QAction::Trigger);
-    if (m_hashtyp == "SHA384") ui->actionSHA_2_384->activate(QAction::Trigger);
-    if (m_hashtyp == "SHA512") ui->actionSHA_2_512->activate(QAction::Trigger);
-    if (m_hashtyp == "WHIRLPOOL") ui->actionWhirlpool->activate(QAction::Trigger);
+        if (m_hashtyp == "MD5") ui->actionMD5->activate(QAction::Trigger);
+        if (m_hashtyp == "SHA-1") ui->actionSHA_1->activate(QAction::Trigger);
+        if (m_hashtyp == "RIPEMD-160") ui->actionRIPEMD_160->activate(QAction::Trigger);
+        if (m_hashtyp == "SHA224") ui->actionSHA_2_224->activate(QAction::Trigger);
+        if (m_hashtyp == "SHA256") ui->actionSHA_2_256->activate(QAction::Trigger);
+        if (m_hashtyp == "SHA384") ui->actionSHA_2_384->activate(QAction::Trigger);
+        if (m_hashtyp == "SHA512") ui->actionSHA_2_512->activate(QAction::Trigger);
+        if (m_hashtyp == "WHIRLPOOL") ui->actionWhirlpool->activate(QAction::Trigger);
 }
 
 /*
@@ -1397,6 +1403,7 @@ void MainWindow::rootpath()
  */
 void MainWindow::on_actionMD5_triggered()
 {
+
     ui->tableWidget->horizontalHeaderItem(2)->setText(tr("MD5 Digest"));
     m_hashtyp = "MD5";
     ui->actionRefresh->activate(QAction::Trigger);
@@ -1491,6 +1498,7 @@ void MainWindow::callActionOpenChecksumFile(void)
     ui->actionOpen_Hash_File->activate(QAction::Trigger);
 }
 
+
 /**
  * This is called from main
  * if arguments "-md5" or "-sha1" are passed to stdin
@@ -1574,6 +1582,9 @@ void MainWindow::on_actionClear_All_triggered()
 {
     if (ui->tabWidget->currentIndex() == 0)
     {
+        m_noComboIndexChanged = true;
+        ui->comboBox->setCurrentIndex(0);
+        m_noComboIndexChanged = false;
         report.clear();
         ui->label_2->setText(tr("Files selected: 0"));
         ui->labelStatus->setText("");
@@ -1597,7 +1608,7 @@ void MainWindow::on_actionClear_All_triggered()
         ui->label_missmatch->setText(tr("Failure :"));
         ui->label_unreadable->setText(tr("Unreadable :"));
         ui->label_total_result->setText(tr("Total Result :"));
-        ui->groupBox_5->setTitle("Report");
+        ui->groupBox_5->setTitle("Report");        
     }
     progressbar->reset();
     printReport();
@@ -1616,7 +1627,6 @@ void MainWindow::on_tabWidget_currentChanged(int index)
         }
         ui->tableWidget_2->setAcceptDrops(false);
         ui->tableWidget->setAcceptDrops(true);
-        ui->menuHash->setDisabled(false);
         ui->actionOpen_dir->setDisabled(false);
         ui->actionOpen_file->setDisabled(false);
     }
@@ -1624,7 +1634,6 @@ void MainWindow::on_tabWidget_currentChanged(int index)
     {
         ui->tableWidget_2->setAcceptDrops(true);
         ui->tableWidget->setAcceptDrops(false);
-        ui->menuHash->setDisabled(true);
         ui->actionSave_Hash_File->setDisabled(true);
         ui->actionOpen_Hash_File->setDisabled(false);
         ui->actionOpen_dir->setDisabled(true);

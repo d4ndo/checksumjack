@@ -159,6 +159,7 @@ private:
 
     QMenu *checksumMenu2;
     QAction *open2Selected;
+    bool m_noComboIndexChanged;
 
 };
 
