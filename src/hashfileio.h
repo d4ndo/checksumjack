@@ -20,7 +20,10 @@
 #define HASHFILEIO_H
 
 #include <QFile>
+#include <QDir>
 #include <QTextStream>
+#include "globaldefs.h"
+#include "detector.h"
 
 class HashFileIO
 {
@@ -32,6 +35,7 @@ public:
     HashFileIO(QString filename)
         : mfilename(filename),
           mformat("gnu"),
+          mfullPath(false),
           mInputdata(mfilename),
           mOutputdata(mfilename),
           mIn(&mInputdata),
@@ -45,8 +49,8 @@ public:
     bool openHashFileReading(void);
     bool openHashFileWriteing(void);
     void closeHashFile(void);
-    void writerToHashFile(const QString& hashStr, const QString& rootpath, const  QString& fileName, const QString& hashtyp);
-    QString readFromHashFile(void);
+    void writerToHashFile(const struct hashSet& hashset);
+    struct hashSet readFromHashFile(void);
     QString getformat() const;
     void setformat(const QString &value);
     bool getfullPath() const;

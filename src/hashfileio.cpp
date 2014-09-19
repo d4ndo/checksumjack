@@ -57,41 +57,51 @@ void HashFileIO::closeHashFile(void)
     mOutputdata.close();
 }
 
-void HashFileIO::writerToHashFile(const QString &hashStr, const QString &rootpath, const QString &fileName, const QString &hashtyp)
+void HashFileIO::writerToHashFile(const struct hashSet& hashset)
 {
     QString filepath;
 
     if (mfullPath == true)
     {
-        filepath.append(rootpath);
-        filepath.append(fileName);
+        filepath.append(hashset.rootpath);
+        filepath.append(hashset.file);
     } else {
-        filepath.append(fileName);
+        filepath.append(hashset.file);
     }
 
     if (mformat.contains("gnu")) {
-        mOut << hashStr << " " << filepath << endl;
+        mOut << hashset.hash << " " << filepath << endl;
     }
     if (mformat.contains("bsd")) {
-        mOut << hashtyp << " (" << filepath << ")" << " = " << hashStr << endl;
+        mOut << hashset.hashtyp << " (" << filepath << ")" << " = " << hashset.hash << endl;
     }
     if (mformat.contains("csv")) {
-        mOut << hashStr << "," << filepath << endl;
+        mOut << hashset.hash << "," << filepath << endl;
     }
 }
 
-QString HashFileIO::readFromHashFile(void)
+struct hashSet HashFileIO::readFromHashFile(void)
 {
+    struct hashSet hashset;
     QString line;
 
     if (mIn.atEnd())
     {
-        return "EOF";
+        hashset.hash = "none";
+        return hashset;
     } else {
         line = mIn.readLine();
-        return line;
+
+        if (!detectCommentOrEmpty(line))
+        {
+            hashset.hashtyp = detectHashTyp(line);
+            hashset.hash = detectHASHDigest(line);
+            hashset.file = detectFilename(line);
+        }
+        return hashset;
     }
 }
+
 QString HashFileIO::getformat() const
 {
     return mformat;

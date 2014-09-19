@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += widgets testlib
+QT       += widgets testlib core
 
 TARGET = tst_unittest
 DESTDIR = ../build_unittest/
@@ -13,8 +13,13 @@ CONFIG   -= app_bundle
 
 TEMPLATE = app
 
-
 SOURCES += tst_unittest.cpp \
         ../src/fileio.cpp \
-        ../src/hashfileio.cpp
+        ../src/hashfileio.cpp \
+        ../src/detector.cpp
+
+HEADERS += ../src/fileio.h \
+           ../src/hashfileio.h \
+           ../src/detector.h
+
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
