@@ -19,7 +19,7 @@ Compile:
 
 ```bash
 cd checksumjack/src/
-qmake -o Makefile checksumJack.pro
+qmake -o Makefile ChecksumJack.pro
 make
 make install
 ```
