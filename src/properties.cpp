@@ -50,7 +50,7 @@ Properties::Properties(Options *opt, QWidget *parent) :
     }
     if (options->format().contains("csv"))
     {
-        ui->radiocsv->setChecked("csv");
+        ui->radiocsv->setChecked(true);
     }
     if (options->fullPath() == true)
     {
