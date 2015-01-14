@@ -76,7 +76,7 @@ QByteArray& FileIO::parseAll()
         mfin.read(puffer, delta);
         mByte.append(puffer, delta);
     }
-    free(puffer);
+    delete [] puffer;
     return mByte;
 }
 
