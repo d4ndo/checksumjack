@@ -177,9 +177,3 @@ void Properties::on_comboBoxHashTyp_activated(int index)
         options->setDefaultHash("WHIRLPOOL");
     }
 }
-
-
-
-
-
-

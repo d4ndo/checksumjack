@@ -115,5 +115,3 @@ QDebug operator<<(QDebug stream, const ReportItem &r)
                             << r.statusItem()->text()  << ", "  << ")";
     return stream.space();
 }
-
-

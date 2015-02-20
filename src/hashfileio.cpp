@@ -121,5 +121,3 @@ void HashFileIO::setfullPath(bool value)
 {
     mfullPath = value;
 }
-
-

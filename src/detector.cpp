@@ -83,6 +83,3 @@ bool detectCommentOrEmpty(const QString &input)
     }
     return false;
 }
-
-
-

@@ -93,9 +93,3 @@ void Options::apply()
     emit initProperties();
     emit init_hashtyp();
 }
-
-
-
-
-
-
