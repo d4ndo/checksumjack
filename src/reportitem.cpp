@@ -25,10 +25,6 @@ ReportItem::ReportItem()
 
 ReportItem::~ReportItem()
 {
-    delete(mfilePath);
-    delete(mfileItem);
-    delete(msizeItem);
-    delete(mstatusItem);
 }
 
 void ReportItem::init()
